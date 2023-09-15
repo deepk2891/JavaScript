@@ -38,7 +38,10 @@ Math.round((1899 + 2095 + 799 + 499) * 0.1) / 100; //  5.29
 (1899 + 2095 + 799 + 499) / 100 + Math.round((1899 + 2095 + 799 + 499) * 0.1) / 100; //  58.21
 
 //  🟩2j. Lets say we want to always round a number a down (2.8 => 2) Using Google or an A.I. tool, search for the code to do this.
+Math.floor(2.8); // =>  2
+
 //  🟩2k. Lets always round a number up (2.2 => 3). Search how to do this.
+Math.ceil(2.2); //  =>  3
 
 /*
     🟨Challenge Exercise -
@@ -54,5 +57,5 @@ Math.round((1899 + 2095 + 799 + 499) * 0.1) / 100; //  5.29
 //  🟩2m. The temperature is 86◽F, Calculate the temperature in Celsius. (30)
 ((86 - 32) * 5) / 9;
 
-//  🟩2m. The temperature is -5◽C, Calculate the temperature in Fahrenheit. (23)
+//  🟩2n. The temperature is -5◽C, Calculate the temperature in Fahrenheit. (23)
 (-5 * 9) / 5 + 32;
