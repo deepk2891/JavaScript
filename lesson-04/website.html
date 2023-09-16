@@ -1,0 +1,70 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 4 : HTML CSS Review & Console.log
+    
+    1. Reviewed basics of HTML & CSS.
+    2. Load JavaScript inside HTML file <script>,onclick=""
+    3. Comments
+    4. console.log
+   
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS REVIEW</title>
+    <style>
+        /* 
+            This is a comment
+        */
+        .red-button {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        .yellow-button {
+            background-color: yellow;
+            color: black;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🟨This will ---Run 2nd -When we click button -->
+    <button title="Good job!" class="red-button" 🟩onclick="alert('good job');">hello</button>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.🟩<button title="Good job!" class="yellow-button">hello</button> Quisquam itaque esse nisi recusandae
+        eligendi explicabo voluptate totam corporis ullam nesciunt atque, assumenda, et suscipit praesentium?Quos mollitia minus officia fuga!
+    </p>
+
+
+    <!-- 🟨This will ---Run 1st When the page Loaded -->
+    🟩
+    <script>
+        // This is a comment
+        // alert('hello'); 
+
+        /*
+            multi
+            line 
+            comment
+        */
+
+        //🟨console.log
+
+        console.log(2 + 2);
+        console.log('some' + 'text');
+
+    </script>
+
+</body>
+
+</html>
