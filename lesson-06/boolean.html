@@ -1,0 +1,120 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!--
+
+     Lesson 6 : Booleans
+
+     1. Comparison operators
+     2. Order of operation
+     3. If statement
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans & IF Statements</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        true
+        false
+
+        // 🟨Comparison operators
+        // 🟦>    <    >=   <=   ===  !==
+
+        // 🟨Order of operation
+        // 🟦1. (...)
+        // 🟦2. * / 
+        // 🟦3. + - 
+        // 🟦4. Comparison operators 
+
+
+        console.log(3 > 5 - 5);
+
+        console.log(5 === '5.00');
+
+        // 🟩
+        if (true) {
+            console.log('if');
+        }
+        else {
+            console.log('else');
+        }
+
+
+        // 🟩
+        const age = 15;
+        if (age >= 16) {
+            console.log('You can drive');
+            console.log('Congrats');
+        }
+        else if (age >= 14) {
+            console.log('Almost there');
+        }
+        else {
+            console.log("You can't drive");
+        }
+
+
+        // 🟩
+        console.log(true && false);
+        console.log(0.2 >= 0 && 0.2 < 1 / 3);
+
+        console.log(true || false);
+        console.log(!false);
+
+        // 🟩
+        if (0) {
+            console.log('truthy');
+        }
+
+
+        // 🟩
+        const cardQuantity = 5;
+        if (cardQuantity > 0) {
+            console.log('cart has products');
+        }
+        else {
+            console.log('cart is empty');
+        }
+
+
+        // 🟩
+        console.log(!0);
+
+        console.log('text' / 5);
+
+        // 🟩
+        const variable1 = undefined;
+        console.log(variable1);
+
+        // 🟩
+        const result = 0 ? 'truthy' : 'falsy';
+        console.log(result);
+
+        // 🟩
+        false && console.log('hello');
+
+        // 🟩
+        const message = 5 && 'hello';
+        console.log(message);
+
+        // 🟩
+        const currency = undefined || 'USD';
+        console.log(currency);
+
+    </script>
+</body>
+
+</html>
