@@ -1,0 +1,159 @@
+<!-- 
+    
+    Lesson 5 : Exercises - Variables
+    
+    !!! NOTE : Do these Exercises, create a HTML file (like Exercise.html)
+    
+-->
+
+
+<!-- 🟩5a. Create a <script> element.Inside the < script >,create a variable called 'name',and save your name in this variable(as a string). -->
+
+<!-- 🟩5b. Continuing from Exercise-5a,display the message 'My name is: ${name}' in console(insert the 'name' variable created in 5a into this message). -->
+
+<!-- 🟩5c. At a restaurant,you order 1 coffee($5),2 bagels($3 each),and 1 apple($9).Calculate the cost and save it in a variable called 'cost'. -->
+
+<!-- 🟩5d. Continuing from Exercise-5c,display 'Cost of food: $${cost)' in the console. -->
+
+<!-- 🟩5e. Let's say the restaurant charges a 10% tax. Using the 'cost' variable from Exercise-5c, calculate the tax (hint: multiply by 0.1), and save the result in a variable. -->
+
+<!-- 🟩5f. Continuing from Exercise-5e, display 'Tax (10%): $${tax}' in the consol.. -->
+
+<!-- 🟩5g. Continuing from Exercise-5f, calculate the total (cost + tax), save it in a variable called 'totalCost', and display the message 'Total cost: $${totalCost}' in the console. -->
+
+<!-- 🟩5h. In the Cart Quantity project, add 2 more buttons '+4' and '+5', which increase the quantity by 4 and 5 when you click them. Try using += -->
+
+<!-- 🟩5i. In the Cart Quantity project, add a button 'Remove from cart', which decreases the cart quantity by 1. -->
+
+<!-- 🟩5j. Add 2 buttons '-2' and '-3', which decrease the quantity by 2 and 3. -->
+
+<!-- 🟩5k. Use the shortcuts -- and -= in Exercise-5i and 5j. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+</head>
+
+<body>
+
+    <button onclick="
+        console.log(`Cart Quantity : ${cartQuantity}`);
+    ">
+        Show Quantity
+    </button>
+    <button onclick="
+        // 🟩cartQuantity = cartQuantity + 1;
+        // 🟩cartQuantity += 1;
+        // 🟩cartQuantity++;
+        cartQuantity++;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+    ">
+        Add to Cart
+    </button>
+    <button onclick="
+        // cartQuantity = cartQuantity + 2;
+        cartQuantity += 2;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+        ">
+        +2
+    </button>
+    <button onclick="
+        // cartQuantity += 3;
+        cartQuantity = cartQuantity + 3;
+        console.log(`Cart Quantity : ${cartQuantity}`);
+    ">
+        +3
+    </button>
+
+    <!-- 🟩5h. In the Cart Quantity project, add 2 more buttons '+4' and '+5', which increase the quantity by 4 and 5 when you click them. Try using += -->
+    <button onclick="
+                // cartQuantity = cartQuantity + 4;
+                cartQuantity += 4;
+                console.log(`Cart Quantity : ${cartQuantity}`);
+                ">
+        +4
+    </button>
+    <button onclick="
+                // cartQuantity += 5;
+                cartQuantity = cartQuantity + 5;
+                console.log(`Cart Quantity : ${cartQuantity}`);
+            ">
+        +5
+    </button>
+
+    <!-- 🟩5j. Add 2 buttons '-2' and '-3', which decrease the quantity by 2 and 3. -->
+    <button onclick="
+                // cartQuantity = cartQuantity -2;
+                cartQuantity -= 2;
+                console.log(`Cart Quantity : ${cartQuantity}`);
+                ">
+        -2
+    </button>
+    <button onclick="
+                // cartQuantity -= 3;
+                cartQuantity = cartQuantity - 3;
+                console.log(`Cart Quantity : ${cartQuantity}`);
+            ">
+        -3
+    </button>
+
+    <button onclick="
+        cartQuantity = 0;
+        console.log('Cart was reset');
+        console.log(`Cart Quantity : ${cartQuantity}`);
+    ">
+        Reset Cart
+    </button>
+
+    <!-- 🟩5i. In the Cart Quantity project, add a button 'Remove from cart', which decreases the cart quantity by 1. -->
+    <button onclick="
+        cartQuantity = cartQuantity-1;
+        console.log('1 item was removed');
+        console.log(`Cart Quantity : ${cartQuantity}`);
+    ">
+        Remove from cart
+    </button>
+
+
+
+
+    <script>
+
+        let cartQuantity = 0;
+
+
+        //🟩5a. Create a <script> element.Inside the < script >,create a variable called 'name',and save your name in this variable(as a string).
+        let name = 'deep';
+        console.log(name);
+
+        //🟩5b. Continuing from Exercise-5a,display the message 'My name is: ${name}' in console(insert the 'name' variable created in 5a into this message).
+        console.log(`My name is ${ name }`);
+
+        //🟩5c. At a restaurant,you order 1 coffee($5),2 bagels($3 each),and 1 apple($9).Calculate the cost and save it in a variable called 'cost'.
+        const cost = 5 + 2 * 3 + 9;
+        console.log(cost);
+
+        //🟩5d. Continuing from Exercise-5c,display 'Cost of food: $${cost)' in the console.
+        console.log(`Cost of food : $${ cost }`);
+
+        //🟩5e. Let's say the restaurant charges a 10% tax. Using the 'cost' variable from Exercise-5c, calculate the tax (hint: multiply by 0.1), and save the result in a variable.
+        const tax = cost * 0.1;
+
+        //🟩5f. Continuing from Exercise-5e, display 'Tax (10%): $${tax}' in the consol..
+        console.log(`Tax (10%) : $${ tax }`);
+
+        //🟩5g. Continuing from Exercise-5f, calculate the total (cost + tax), save it in a variable called 'totalCost', and display the message 'Total cost: $${totalCost}' in the console.
+        const totalCost = cost + tax;
+        console.log(`Total cost : $${ totalCost }`);
+
+
+    </script>
+</body>
+
+</html>
