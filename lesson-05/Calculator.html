@@ -1,0 +1,175 @@
+<!-- 
+    
+    Lesson 5 : Exercises - Variables
+    
+    !!! NOTE : Do these Exercises, create a HTML file (like Exercise.html)
+
+    🟨  visit this link for QuestionBank :- (5l,5m,5n,5o,5p,5q,5r)
+
+    🟩  https://github.com/deepk2891/Javascript/blob/main/lesson-05/README.md
+    
+-->
+
+<!-- 🟩5l. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Exercise</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 30px;
+            height: 60px;
+            min-width: 50px;
+            padding: 0 10px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            transition: all 0.1s linear;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 🟩5r. -->
+    <p>
+        <button onclick="
+            //🟩5o.
+            calculation += '1';
+            console.log(calculation);
+            ">
+            1
+        </button>
+        <button onclick="
+            //🟩5p.
+            calculation += '2';
+            console.log(calculation);
+            ">
+            2
+        </button>
+        <button onclick="
+            //🟩5p.
+            calculation += '3';
+            console.log(calculation);
+            ">
+            3
+        </button>
+        <button onclick="
+            //🟩5p.
+            calculation += ' + ';
+            console.log(calculation);
+        ">
+            +
+        </button>
+    </p>
+    <p>
+        <button onclick="
+            calculation += '4';
+            console.log(calculation);
+        ">
+            4
+        </button>
+        <button onclick="
+            calculation += '5';
+            console.log(calculation);
+        ">
+            5
+        </button>
+        <button onclick="
+            calculation += '6';
+            console.log(calculation);
+        ">
+            6
+        </button>
+        <button onclick="
+            calculation += ' - ';
+            console.log(calculation);
+        ">
+            -
+        </button>
+    </p>
+    <p>
+        <button onclick="
+            calculation += '7';
+            console.log(calculation);
+        ">
+            7
+        </button>
+        <button onclick="
+            calculation += '8';
+            console.log(calculation);
+        ">
+            8
+        </button>
+        <button onclick="
+            calculation += '9';
+            console.log(calculation);
+        ">
+            9
+        </button>
+        <button onclick="
+            calculation += ' * ';
+            console.log(calculation);
+        ">
+            *
+        </button>
+    </p>
+    <p>
+        <button onclick="
+            calculation += '0';
+            console.log(calculation);
+        ">
+            0
+        </button>
+        <button onclick="
+            calculation += '.';
+            console.log(calculation);
+        ">
+            .
+        </button>
+        <button onclick="
+            // 🟩5q.
+            calculation = eval(calculation);
+            console.log(calculation);
+        ">
+            =
+        </button>
+        <button onclick="
+            calculation += ' / ';
+            console.log(calculation);
+        ">
+            /
+        </button>
+    </p>
+
+    <button onclick="
+        calculation = '';
+        console.log(calculation);
+    ">
+        clear
+    </button>
+
+
+    <script>
+
+        //🟩5n.
+        let calculation = '';
+
+
+    </script>
+</body>
+
+</html>
