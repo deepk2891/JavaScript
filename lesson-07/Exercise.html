@@ -1,0 +1,84 @@
+<!-- 
+    
+    Lesson 7 : Exercises - Functions
+    
+    !!! NOTE : Do these Exercises, create a HTML file (like Exercise.html)
+
+    🟨  visit this link for QuestionBank :-
+
+    🟩  https://github.com/deepk2891/Javascript/blob/main/lesson-07/README.md
+    
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises-Functions</title>
+</head>
+
+<body>
+
+    <script>
+
+        //🟨7a.
+        function greet ()
+        {
+            console.log('Good Day!');
+        }
+        greet();
+
+
+        //🟨7b.
+        function greet (name)
+        {
+            // console.log(`hello ${ name } !`);
+
+            //🟨7c.
+            if (!name) {
+                console.log('Hi there !');
+            }
+            else {
+                console.log(`Hello ${ name }`);
+            }
+        }
+        greet();
+
+
+        //🟨7d.
+        function convertToFahrenheit (celsius)
+        {
+            return (celsius * 9 / 5) + 32;
+        }
+        console.log(convertToFahrenheit(5));
+
+
+        //🟨7e.
+        function convertToCelsius (fahrenheit)
+        {
+            return (fahrenheit - 32) * 5 / 9;
+        }
+        console.log(convertToCelsius(5));
+
+
+        //🟨7f.
+        function convertToTemperature (degrees,unit)
+        {
+            if (unit == 'C') {
+                const result = convertToFahrenheit(degrees);
+                return `${ result }F`;
+
+            }
+            else if (unit === 'F') {
+                const result = convertToCelsius(degrees);
+                return `${ result }C`;
+            }
+        }
+        console.log(convertToTemperature(25,'C'));
+        console.log(convertToTemperature(86,'F'));
+
+    </script>
+</body>
+
+</html>
