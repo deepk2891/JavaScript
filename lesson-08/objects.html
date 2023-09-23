@@ -1,0 +1,191 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!--
+
+    Lesson 8 : Objects
+
+    1. Objects = group related values together
+    2. Added a score to Rock Paper Scissors
+    3. Built-in objects (JSON, localStorage)
+    4. More details (null, auto-boxing, references)
+    5. Shortcuts (destructuring, shorthand property shorthand method)
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+
+    <!-- 
+
+        We can save any type of value in Object.
+
+        
+        🟨Console.log = Method ~~~~~~~~~~~~~~~~~~~~~~~
+        🟩Console is an Object provided by JavaScript
+        🟩log is a function save inside console Object.
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+        🟨Math.round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        🟩Math is Object
+        🟩random is function saved in Math object
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+     -->
+    <script>
+
+        //🟨Syntax Rules for object :
+        //🟨Create an object
+        const product = {
+            //🟩Property : Values
+            name: 'apple',
+            price: 100
+        }
+
+        //🟨Access a value~~~~~~~~~~~~~~~~~~~~~~
+        //🟩Inside the 🟨objectName.propertyName
+
+        console.log(typeof (product));  // object
+        console.log(product);
+        console.log(product.name);  //🟩Dot Notation
+        console.log(product.price);
+
+        product.name = 'banana';
+        console.log(product);
+
+        //🟦If property not exist =  value undefined
+
+        product.newProperty = true;
+        console.log(product);
+
+
+        //🟨Delete property~~~~~~~
+        delete product.newProperty;
+        console.log(product);
+
+
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time': '1 day',
+            rating: {                    // 🟨Nested Object
+                stars: 4.5,
+                count: 87
+            },
+            fun: function function1 ()   //🟨function is another type of value in javascript
+            {
+                console.log('function inside object');
+            }
+        };
+
+        console.log(product2);
+        console.log(product2.name);
+
+        //🟩Bracket Notation : let us use properties that don't work with dot notation
+        console.log(product2[ 'name' ]);
+        console.log(product2[ 'delivery-time' ]);
+
+        console.log(product2.rating);
+        console.log(product2.rating.count);
+
+        product2.fun();
+
+        console.log(typeof console);
+        console.log(typeof console.log);
+
+
+        // 🟨JSON   :   🟩Syntax more universal then javascript
+        // javascript object notation
+        // a syntax 
+        // similar to JavaScript object
+        // but has less features
+        // similar to JS object
+        // but with less features
+
+
+        // Built in JSON Object
+        // Convert:
+        // Javascript Object 👉➡ JSON
+
+
+        console.log(JSON.stringify(product2));
+        console.log(typeof JSON.stringify(product2));  //string
+
+
+        // Convert JSON 👉➡ JavaScript Object
+
+        const jsonString = JSON.stringify(product2);
+        console.log(JSON.parse(jsonString));
+
+
+        //🟨 local storage
+
+        console.log('hello'.length);  //🟨Autoboxing
+        console.log('hello'.toUpperCase());
+
+
+        //🟨 Objects are References
+
+        const object1 = {
+            message: 'hello',
+        };
+        const object2 = object1;
+        console.log(object2);   //🟩 Copy by reference
+
+        object1.message = 'Good job!';
+        console.log(object1);
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good job!'
+        };
+
+        console.log(object3 === object1);  //false
+        console.log(object2 === object1);  //true
+
+
+        //🟨 Shortcut for objects
+
+        const object4 = {
+            message: 'Good job!',
+            price: 799
+        };
+        //const message = object4.message;
+        const { message,price } = object4;
+        console.log(message);   // Good job!
+        console.log(price);
+
+
+
+        //🟨 Shorthand property
+
+        const object5 = {
+            //    message: message
+            message,
+            // method: function function1 ()
+            // {
+            // console.log('method');
+            // }
+            method ()       //🟩Shorthand Method Syntax
+            {
+                console.log('method');
+            }
+        };
+        console.log(object5);
+        object5.method();
+
+
+
+
+    </script>
+</body>
+
+</html>
