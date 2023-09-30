@@ -1,0 +1,156 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 8 : Objects
+    
+    Exercise
+   
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 🟩8j.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+
+    <script>
+
+        //🟩8a.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        const product = {
+            name: 'basketball',
+            price: 2095,
+        }
+        console.log(product);
+
+
+        //🟩8b.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        product.price += 500;
+        console.log(product);
+
+
+        //🟩8c.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        product[ 'delivery-time' ] = '3-days';
+        console.log(product)
+
+
+        //🟩8d.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        let product1 = {
+            name: 'apple',
+            price: 100
+        }
+        let product2 = {
+            name: 'banana',
+            price: 50
+        }
+
+        function comparePrice (product1,product2)
+        {
+            if (product1.price > product2.price) {
+                return product2;
+            }
+            else {
+                return product1;
+            }
+        }
+        console.log(comparePrice(product1,product2))
+
+
+        //🟩8e.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        // console.log(product1 === product2); 
+        function isSameProduct (product1,product2)
+        {
+            return (
+                product1.name = product2.name &&
+                product1.price === product2.price
+            )
+        }
+        console.log(isSameProduct(product1,product2))
+
+
+        //🟩8f.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        let inputString = "JavaScript"  // 🟨
+
+        const lowercaseString = inputString.toLowerCase();
+        console.log(lowercaseString);
+
+        // 🟦2nd Way
+
+        // lowercaseString = '';
+        // for (let i = 0; i < inputString.length; i++)
+        // {
+        //     const char = inputString[ i ];
+        //     lowercaseString += char.toLowerCase();
+        // }
+        // console.log('lowercaseString');
+
+
+        //🟩8g.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        // const repeatString = inputString.repeat(2);
+        // console.log(repeatString);
+
+        // 🟦2nd Way
+
+        const repeatCount = 2;
+        let repeatedString = '';
+        for (let i = 0; i < repeatCount; i++) {
+            repeatedString += inputString;
+        }
+        console.log(repeatedString);
+
+        // 🟦3rd Way
+
+        // const repeatCount = 2;
+        // let repeatedString = '';
+        // let i = 0;
+        // while (i < repeatString)
+        // {
+        //     repeatedString += inputString;
+        //     i++
+        // }
+        // console.log(repeatString);
+
+
+        //🟩8j.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        let score = {
+            wins: 0,
+            losses: 0
+        }
+        function playGame (guess)
+        {
+            const randomNumber = Math.random();
+            const result = randomNumber < 0.5 ? 'heads' : 'tails'
+
+            console.log(guess === result ? 'You Win!' : 'You Lose!')
+
+            if (guess === result) {
+                score.wins++;
+            }
+            else {
+                score.losses++;
+            }
+            console.log(score);
+        }
+
+
+    </script>
+</body>
+
+</html>

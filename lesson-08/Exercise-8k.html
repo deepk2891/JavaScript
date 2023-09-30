@@ -1,0 +1,77 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 8 : Objects
+    
+    Exercise - 8k  - Heads & Tails
+   
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8k- Heads Tails</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 30px;
+            height: 60px;
+            min-width: 50px;
+            padding: 0 10px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            transition: all 0.1s linear;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+
+    <script>
+        const score = JSON.parse(localStorage.getItem('score'))
+            ||
+            { wins: 0,losses: 0 }
+
+
+        function playGame (guess)
+        {
+            const randomNumber = Math.random();
+            const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+            console.log(guess === result ? 'You Win!' : 'You Lose!')
+
+            if (guess === result) {
+                score.wins++
+            }
+            else {
+                score.losses++
+            }
+            console.log(score);
+
+            localStorage.seItem('score',JSON.stringify(score));
+
+        }
+
+
+    </script>
+</body>
+
+</html>
