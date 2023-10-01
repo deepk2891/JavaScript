@@ -1,0 +1,54 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!--
+
+    Lesson 9 : DOM ( Document Object Model )
+
+    1. Document Object Model (DOM)
+    2. document.querySelector(...)
+    3. innerHTML
+    4. 3 projects using the DOM
+    5. onkeydown="..."
+    6. more details about strings + window onject
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM-JS</title>
+	</head>
+
+	<body>
+		<button>hello</button>
+		<button class="js-button">second button</button>
+
+		<script>
+			console.log(document.querySelector("button").innerHTML)
+			document.querySelector("button").innerHTML = "Changed"
+
+			// console.log(document.querySelector(".js-button"))
+			const buttonElement = document.querySelector(".js-button")
+			console.log(buttonElement)
+
+			/* 
+			console.log(document.title);
+			document.title = 'Changed'
+		
+            console.log(document.body);
+			console.log(typeof document.body)
+            
+			console.log(document.body.innerHTML);
+			document.body.innerHTML = '<button>Good job!</button>';
+            */
+
+			//🟨DOT Notation :
+			/*
+			document.body.innerHTML = "hello"
+			document.title = 'Good Job'
+            */
+		</script>
+	</body>
+</html>
