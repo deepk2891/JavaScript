@@ -1,0 +1,29 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 9 : DOM ( Document Object Model )
+    
+    Exercise - 9h. -
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 9h</title>
+	</head>
+	<body>
+		<input
+			type="text"
+			placeholder="type here..."
+			class="js-input"
+			onkeyup="
+			const inputElement=document.querySelector('.js-input');
+			document.querySelector('.js-message').innerHTML=`${inputElement.value}`
+			"
+		/>
+		<p class="js-message"></p>
+	</body>
+</html>

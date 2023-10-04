@@ -1,0 +1,39 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 9 : DOM ( Document Object Model )
+    
+    Exercise - 9f. -
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 9f</title>
+	</head>
+	<body>
+		<input
+			type="text"
+			placeholder="Enter your name"
+			class="js-name-input"
+			onkeydown="
+				if (event.key === 'Enter') {
+					displayMessage();
+				}
+			"
+		/>
+		<button onclick="displayMessage();">Submit</button>
+		<p class="js-message"></p>
+
+		<script>
+			function displayMessage() {
+				const inputElement = document.querySelector(".js-name-input")
+				document.querySelector(".js-message").innerHTML = `Your name is ${inputElement.value}`
+			}
+		</script>
+	</body>
+</html>

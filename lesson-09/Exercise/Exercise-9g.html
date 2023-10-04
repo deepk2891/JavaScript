@@ -1,0 +1,41 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 9 : DOM ( Document Object Model )
+    
+    Exercise - 9g. -
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 9g</title>
+	</head>
+	<body>
+		<h2>Amazon Shipping Calculator</h2>
+		<p>Orders under Rs.499 = +Rs.40 shipping</p>
+		<p>Orders over 499 = FREE shipping</p>
+		<input placeholder="cost of order" onkeydown="handleCostKeydown(event)" if(event.key === 'Enter'){calculateTotal();} class="js-cost-input" />
+		<button onclick="calculateTotal()">Calculate</button>
+		<p class="js-total-cost"></p>
+
+		<script>
+			function calculateTotal() {
+				const inputElement = document.querySelector(".js-cost-input")
+				let cost = Number(inputElement.value)
+
+				if (cost < 499) {
+					cost = cost + 40
+				}
+
+				// 🟨
+				cost = Math.round(cost * 100) / 100
+
+				document.querySelector(".js-total-cost").innerHTML = `Rs .${cost}`
+			}
+		</script>
+	</body>
+</html>

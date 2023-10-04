@@ -1,0 +1,92 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 9 : DOM ( Document Object Model )
+    
+    Exercise - 9i. -
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>9i - Add to cart</title>
+		<style>
+			body {
+				text-align: center;
+			}
+			button {
+				cursor: pointer;
+				font-size: 20px;
+				height: 40px;
+				min-width: 50px;
+				padding: 0 10px;
+				background-color: white;
+				color: black;
+				border: 2px solid black;
+				transition: all 0.1s linear;
+				margin: 5px;
+			}
+			button:hover {
+				background-color: black;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button onclick="displayCartQuantity();">Show Quantity</button>
+
+		<button onclick="updateCartQuantity(1);">Add to Cart</button>
+
+		<button onclick="updateCartQuantity(2);">+2</button>
+
+		<button onclick="updateCartQuantity(3);">+3</button>
+
+		<button onclick="updateCartQuantity(-2);">-2</button>
+
+		<button onclick="updateCartQuantity(-3)">-3</button>
+
+		<button onclick="updateCartQuantity(-1);">Remove from cart</button>
+
+		<button
+			onclick="
+        	cartQuantity = 0;
+        	console.log('Cart was reset');
+			displayCartQuantity();
+		"
+		>
+			Reset Cart
+		</button>
+
+		<p class="js-cart-quantity"></p>
+
+		<script>
+			let cartQuantity = 0
+
+			displayCartQuantity()
+
+			function updateCartQuantity(change) {
+				if (cartQuantity + change > 10) {
+					alert("The cart is full")
+					return
+				}
+
+				if (cartQuantity + change < 0) {
+					alert("cart is empty")
+					return
+				}
+
+				cartQuantity += change
+
+				displayCartQuantity()
+			}
+			function displayCartQuantity() {
+				document.querySelector(".js-cart-quantity").innerHTML = `Cart Quantity :${cartQuantity}`
+			}
+		</script>
+	</body>
+</html>

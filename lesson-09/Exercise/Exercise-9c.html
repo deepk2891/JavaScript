@@ -1,0 +1,33 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 9 : DOM ( Document Object Model )
+    
+    Exercise - 9c. -
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise 9-c</title>
+	</head>
+	<body>
+		<button
+			onclick="
+            document.querySelector('.js-choice').innerHTML='you choose Heads'"
+		>
+			Heads
+		</button>
+		<button
+			onclick="
+            document.querySelector('.js-choice').innerHTML='you choose Tails'"
+		>
+			Tails
+		</button>
+		<p class="js-choice"></p>
+	</body>
+</html>
