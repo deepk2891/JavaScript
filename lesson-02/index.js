@@ -72,3 +72,66 @@ Math.round(2.6); //  3
 ((2095 + 799) * 0.1) / 100; // 2.894    //  inner (Calculate 1st)
 
 Math.round((2095 + 799) * 0.1) / 100; //  2.89  //  $DOLLARS
+
+
+var number = 3.7;
+var roundedNumber = Math.round(number);
+console.log("Rounded Number: " + roundedNumber);
+
+// 🟨2 * 2 * 2
+var base = 2;
+var exponent = 3
+var result = Math.pow(base,exponent)
+console.log(base + " raised to the power of " + exponent + " is " + result)
+
+//🟨Square Root
+var number = 16
+var squareRoot = Math.sqrt(number)
+console.log("The Square root of " + number + " is " + squareRoot)
+
+//🟨Random Number Generation
+var randomNum = Math.random()
+console.log("Random number between 0 and 1 is : " + randomNum)
+
+var randomInRange = Math.floor(Math.random() * 10) + 1
+console.log("Random Number between 1 and 10 : " + randomInRange)
+
+//🟨Absolute Value
+var num = -5
+var absoluteValue = Math.abs(num)
+console.log("Absolute value of " + num + " is " + absoluteValue)
+
+
+// 🟨 MATH 🟨
+
+var randomNum = Math.random()
+console.log("Random Number : " + randomNum)
+
+var num = 5.7;
+var roundedDown = Math.floor(num);
+console.log("Rounded Down: " + roundedDown);
+
+var num = 5.1;
+var roundedUp = Math.ceil(num);
+console.log("Rounded Up: " + roundedUp);
+
+var num = 5.3;
+var rounded = Math.round(num);
+console.log("Rounded: " + rounded);
+
+var maxNum = Math.max(10,20,30,40)
+console.log("Maximum Number : " + maxNum)
+
+var minNum = Math.min(10,20,30,40)
+console.log("Minimum Number : " + minNum)
+
+var base = 2
+var exponent = 3
+var result = Math.pow(base,exponent)
+console.log(base + " raised to the power of " + exponent + " is = " + result)
+
+var number = 16
+var squareRoot = Math.sqrt(number)
+console.log("Square root of " + number + " is = " + squareRoot)
+
+console.log("The value of PI is : " + Math.PI)
