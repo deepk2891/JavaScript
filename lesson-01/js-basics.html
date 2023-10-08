@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JavaScript Basics</title>
+	</head>
+	<body>
+		<button id="countButton">Click Me</button>
+		<p>Click Count: <span id="clickCount">0</span></p>
+
+		<script>
+			console.log("hello world")
+
+			//🟨Variables
+
+			var name = "deep"
+			var age = "20"
+			var isStudent = true
+
+			//Printing Variables
+
+			console.log("Name : " + name)
+			console.log("Age : " + age)
+			console.log("Is student : " + isStudent)
+
+			//🟨Arithmatic operations
+
+			var num1 = 10
+			var num2 = 5
+
+			var sum = num1 + num2
+			var difference = num1 - num2
+			var product = num1 / num2
+			var quotient = num1 / num2
+
+			console.log("Sum : " + sum)
+			console.log("difference : " + difference)
+			console.log("product : " + product)
+			console.log("quotient : " + quotient)
+
+			//🟨Condional if statemnets
+
+			var age = 18
+			if (age >= 18) {
+				console.log("you r n adult")
+			} else {
+				console.log("you r a minor.")
+			}
+
+			//🟨For Loop
+
+			for (i = 0; i <= 5; i++) {
+				console.log("for loop " + i)
+			}
+
+			//🟨Arrays
+
+			var fruits = ["apple", "banana", "orange"]
+
+			console.log("First fruit " + fruits[0])
+			console.log("Number of fruits : " + fruits.length)
+
+			for (var i = 0; i < fruits.length; i++) {
+				console.log("Fruit " + (i + 1) + ": " + fruits[i])
+			}
+
+			//🟨Functions and  Call
+
+			function greet(name) {
+				console.log("Hello, " + name + "!")
+			}
+			greet("deep")
+
+			//🟨User Input
+
+			var userInput = prompt("Enter your name:")
+			console.log("Hello, " + userInput + "!")
+
+			//🟨Object
+
+			var person = {
+				firstName: "deep",
+				lastName: "kothari",
+				age: 21,
+			}
+			console.log("First Name: " + person.firstName)
+			console.log("Last Name: " + person.lastName)
+			console.log("Age: " + person.age)
+
+			//🟨Event Handling
+			var count = 0
+			var clickButton = document.getElementById("countButton")
+			var clickCount = document.getElementById("clickCount")
+
+			clickButton.addEventListener("click", function () {
+				count++
+				clickCount.textContent = count
+			})
+		</script>
+	</body>
+</html>
