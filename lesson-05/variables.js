@@ -78,3 +78,139 @@ let variable4 = 40;
 //   🟨typeof + variables
 console.log(typeof message);
 console.log(typeof variable2);
+
+
+//🟨Variable Swapping:
+
+let a = 5;
+let b = 10;
+
+// swap the values
+[ a,b ] = [ b,a ]
+console.log("a : ",a)
+console.log("b : ",b)
+
+//🟨Increment and Decrement:
+
+let count = 5
+
+count++
+console.log("Incremented count : " + count)
+count--
+console.log("Incremented count : " + count)
+
+//🟨Calculate Area:
+
+const length = 10
+const width = 5
+const area = length * width
+console.log("Area of the rectangle : " + area)
+
+//🟨Concatenating Strings:
+
+var firstName = "Deep"
+var lastName = "Kothari"
+var fullName = firstName + lastName
+console.log("Full Name : ",fullName)
+
+//🟨Using Template Literals:
+
+var firstName = "Deep"
+var lastName = "Kothari"
+var fullName = `${ firstName } ${ lastName }`
+console.log(fullName)
+
+//🟨Convert String to Number:
+
+const numString = '42'
+const num = Number(numString)
+
+console.log("Original String : " + numString)
+console.log("As a number : " + num)
+console.log("Add 10 : " + (num + 10))
+
+//🟨Variable Scope:
+
+let globalVar = "I'am global"
+function localVarScope () {
+     let localVar = "I'm local to the function"
+     console.log(localVar)
+}
+
+localVarScope()
+console.log(globalVar)
+
+//🟨Check Variable Type:
+
+const value = true
+if (typeof value === "string")
+{
+     console.log("It's a string")
+}
+else if (typeof value === "number")
+{
+     console.log("It's a number")
+}
+else if (typeof value === "boolean")
+{
+     console.log("It's a boolean")
+}
+else
+{
+     console.log("It's something else")
+}
+
+//🟨Temperature Converter:
+
+var fahrenheit = 68
+var celsius = ((fahrenheit - 32) * 5) / 9
+console.log(`${ fahrenheit }°F is ${ celsius }°C`)
+
+//🟨Random Number Generator:
+
+var randomNumber = Math.floor(Math.random() * 10) + 1
+console.log("Random number : " + randomNumber)
+
+//🟨Age Calculator:
+
+const birthYear = 2003
+const currentYear = new Date().getFullYear()
+const age = currentYear - birthYear
+console.log(age)
+
+//🟨Variable Scope (Function vs. Block):
+
+if (true)
+{
+     var varVariable = "I'm function-scoped"
+     let letVariable = "I'm block-scoped"
+     const constVariable = "I'm also block-scoped"
+}
+console.log(varVariable)
+console.log(letVariable)
+console.log(constVariable)
+
+//🟨Simple Calculator:
+
+const num1 = 10;
+const num2 = 5;
+const operator = "+";
+let result1;
+switch (operator)
+{
+     case "+":
+          result1 = num1 + num2;
+          break;
+     case "-":
+          result1 = num1 - num2;
+          break;
+     case "*":
+          result1 = num1 * num2;
+          break;
+     case "/":
+          result1 = num1 / num2;
+          break;
+     default:
+          result1 = "Invalid operator";
+}
+console.log(`Result of ${ num1 } ${ operator } ${ num2 } is ${ result1 }`);
