@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Strings</title>
+	</head>
+	<body>
+		<script>
+			//🟨String Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var text = "This is a sample text"
+			var length = text.length
+			console.log("Length of text is : " + length)
+
+			//🟨Accessing Characters in a String ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var text = "Hello, World!"
+			var firstCharacter = text[0]
+			var sixthCharacter = text[6]
+
+			console.log("Firsy character : " + firstCharacter)
+			console.log("Sixth character : " + sixthCharacter)
+
+			//🟨toUpperCase() and toLowerCase() ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var text = "Hello, World!"
+			var upprecaseText = text.toUpperCase()
+			var lowercaseText = text.toLowerCase()
+
+			console.log("Uppercase : " + upprecaseText)
+			console.log("Lowercase : " + lowercaseText)
+
+			//🟨String Concatenation with Variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var firstName = "deep"
+			var lastName = "kothari"
+			var fullName = firstName + " " + lastName
+
+			console.log("Full name : " + fullName)
+
+			//🟨String Interpolation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var product = "Laptop"
+			var price = 1000
+
+			var message = `The ${product} costs $${price} `
+			console.log(message)
+
+			//🟨Multi-Line String ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var multiLineText = `
+
+				This is multi-line
+
+				string is javascript
+				it can span multiple line
+				and maintain the formatting.
+
+				`
+
+			//🟨JSON.stringify() ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+			var person = {
+				name: "deep",
+				age: 21,
+				city: "Surat",
+			}
+			var jsonString = JSON.stringify(person)
+			console.log(jsonString)
+
+			var str = "This is a string"
+			var jsonString = JSON.stringify(str)
+			console.log("stringify : " + jsonString)
+
+			//🟨charAt(index): Returns the character at the specified index in a string.
+
+			var text = "Hello"
+			var char = text.charAt(1)
+			console.log("charAt(1) : " + char)
+
+			//🟨charCodeAt(index): Returns the Unicode code point value of the character at the
+			//		specified index in a string.
+
+			var text = "Hello"
+			var char = text.charCodeAt(0)
+			console.log("charCodeAt(0) : " + char)
+
+			//🟨endsWith(searchString[, length]): Checks if a string ends with the specified searchString.
+			//		You can optionally specify the length to limit the search.
+
+			var text = "Hello, world!"
+			var endsWithWorld = text.endsWith("world!")
+			console.log("endsWith('world!') : " + endsWithWorld)
+
+			//🟨startsWith(searchString[, position]): Checks if a string starts with the specified
+			//		"searchString". You can optionally specify the "position" to start the search from.
+
+			var text = "Hello, world!"
+			var stringWithHello = text.startsWith("Hello")
+			console.log("startsWith('Hello') : " + stringWithHello)
+
+			//🟨localeCompare(compareString): Compares two strings in the current locale and returns a
+			// 		value indicating their relative order.
+
+			var str1 = "apple"
+			var str2 = "banana"
+			var resultLocalCompare = str1.localeCompare(str2)
+			console.log("localeCompare(str2) : " + resultLocalCompare)
+
+			//🟨repeat(count): Creates and returns a new string by repeating the original string count times.
+
+			var text = "Deep"
+			var repeatedText = text.repeat(5)
+			console.log("repeat(5) : " + repeatedText)
+
+			//🟨search(regexp): Searches for a regular expression pattern in a string and returns the
+			// 		position of the first match or - 1 if not found.
+
+			var text = "The quick brown fox"
+			var search = text.search(/brown/)
+			console.log("search(/brown/) position : " + search)
+
+			//🟨toLocaleLowerCase() and toLocaleUpperCase(): Similar to toLowerCase() and toUpperCase(),
+			//		but uses the string's locale for case conversion.
+
+			var text = "ß"
+			var localLowercase = text.toLocaleLowerCase()
+			console.log("toLocaleLowerCase() : " + localLowercase)
+
+			//🟨indexOf(substring, startIndex): Returns the index of the first occurrence of a substring
+			//		in a string,starting from the optional`startIndex`.Returns - 1 if not found.
+
+			var text = "Hello, world!"
+			var index = text.indexOf("world")
+			console.log("indexOf()  : " + index)
+
+			//🟨slice(startIndex, endIndex): Extracts a portion of a string between the specified
+			//		startIndex(inclusive) and endIndex(exclusive).
+
+			var text = "Hello, world!"
+			var index = text.lastIndexOf("l")
+			console.log("lastIndexOf : " + index)
+
+			//🟨substring(startIndex, endIndex): Similar to `slice`, but doesn't support negative indexes.
+
+			var text = "Hello, wordl!"
+			var portion = text.slice(0, 6)
+			console.log("slice(0,6) : " + portion)
+
+			//🟨replace(searchValue, replaceValue): Replaces the first occurrence of searchValue with
+			//		replaceValue in a string.
+
+			var text = "Hello, world!"
+			var newText = text.replace("world", "there")
+			console.log("replace('world','there') : " + newText)
+
+			//🟨split(separator): Splits a string into an array of substrings based on the specified separator.
+
+			var text = "apple,banana,orange"
+			var fruits = text.split(",")
+			console.log(fruits)
+
+			//🟨toLowerCase() and toUpperCase(): Converts the string to lowercase or uppercase, respectively.
+
+			var text = "Hello, World!"
+			var lowercase = text.toLowerCase(text)
+			console.log("toLowerCase() : " + lowercase)
+			var uppercase = text.toUpperCase(text)
+			console.log("toUpperCase() : " + uppercase)
+
+			//🟨trim(): Removes leading and trailing whitespace from a string.
+
+			var text = " Hello, World! "
+			var trimmedText = text.trim()
+			console.log("trim() : " + trimmedText)
+		</script>
+	</body>
+</html>
