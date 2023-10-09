@@ -13,58 +13,75 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & CSS REVIEW</title>
-    <style>
-        /* 
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML & CSS REVIEW</title>
+		<style>
+			/* 
             This is a comment
         */
-        .red-button {
-            background-color: red;
-            color: white;
-            border: none;
-        }
+			.red-button {
+				background-color: red;
+				color: white;
+				border: none;
+			}
 
-        .yellow-button {
-            background-color: yellow;
-            color: black;
-            border: none;
-        }
-    </style>
-</head>
+			.yellow-button {
+				background-color: yellow;
+				color: black;
+				border: none;
+			}
+		</style>
+	</head>
 
-<body>
+	<body>
+		<!-- 🟨This will ---Run 2nd -When we click button -->
+		<button title="Good job!" class="red-button" onclick="alert('good job');">Click and get alert</button>
+		<p>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit.🟩<button title="Good job!" class="yellow-button">hello</button> Quisquam itaque esse n atque, assumenda, et suscipit
+			praesentium?Quos mollitia minus officia fuga!
+		</p>
 
-    <!-- 🟨This will ---Run 2nd -When we click button -->
-    <button title="Good job!" class="red-button" 🟩onclick="alert('good job');">hello</button>
-    <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.🟩<button title="Good job!" class="yellow-button">hello</button> Quisquam itaque esse nisi recusandae
-        eligendi explicabo voluptate totam corporis ullam nesciunt atque, assumenda, et suscipit praesentium?Quos mollitia minus officia fuga!
-    </p>
+		<button id="myButton">Click Me</button><br /><br />
 
+		<form action="" id="myForm">
+			<label for="name"></label>
+			<input type="text" id="name" name="name" placeholder="enter name " /><br /><br />
+			<label for="email"></label>
+			<input type="email" id="email" name="email" placeholder="enter email" /><br /><br />
+			<input type="submit" value="submit" />
+		</form>
 
-    <!-- 🟨This will ---Run 1st When the page Loaded -->
-    🟩
-    <script>
-        // This is a comment
-        // alert('hello'); 
+		<script>
+			console.log(2 + 2)
+			console.log("some" + "text")
 
-        /*
-            multi
-            line 
-            comment
-        */
+			console.log("This is a message in the console.")
 
-        //🟨console.log
+			var button = document.getElementById("myButton")
+			document.getElementById("myButton").addEventListener("click", function () {
+				// console.log("Button clicked!")
+				if (button.innerHTML === "Click Me") {
+					button.innerHTML = "Clicked"
+				} else {
+					button.innerHTML = "Click Me"
+				}
+			})
 
-        console.log(2 + 2);
-        console.log('some' + 'text');
+			document.getElementById("myForm").addEventListener("submit", function (event) {
+				event.preventDefault()
+				var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				console.log("Name : " + name)
+				console.log("Email : " + email)
+			})
 
-    </script>
-
-</body>
-
+			function greet(name) {
+				return "Hello, " + name + "!"
+			}
+			// Calling the function
+			var message = greet("Deep")
+		</script>
+	</body>
 </html>
