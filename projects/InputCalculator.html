@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator using Input</title>
+	</head>
+	<body>
+		<h1>Simple Calculator using Input</h1>
+
+		<div>
+			<label for="num1">Enter number 1 : </label>
+			<input type="number" id="num1" />
+		</div>
+		<div>
+			<label for="num2">Enter number 2 : </label>
+			<input type="number" id="num2" />
+		</div>
+		<div>
+			<label for="operator">Select Operator : </label>
+			<select id="operator">
+				<option value="+">Addition (+)</option>
+				<option value="-">Subtraction (-)</option>
+				<option value="*">Multiplication (*)</option>
+				<option value="/">Division (/)</option>
+			</select>
+		</div>
+
+		<button id="calculate">Calculate</button>
+		<div id="result"></div>
+
+		<script>
+			const num1Input = document.getElementById("num1")
+			const num2Input = document.getElementById("num2")
+			const operatorSelect = document.getElementById("operator")
+			const calculateButton = document.getElementById("calculate")
+			const resultDiv = document.getElementById("result")
+
+			calculateButton.addEventListener("click", function () {
+				const num1 = parseFloat(num1Input.value)
+				const num2 = parseFloat(num2Input.value)
+				const operator = operatorSelect.value
+
+				let result
+
+				switch (operator) {
+					case "+":
+						result = num1 + num2
+						break
+					case "-":
+						result = num1 - num2
+						break
+					case "*":
+						result = num1 / num2
+						break
+					case "/":
+						if (num2 === 0) {
+							result = "Division by zero is now allowed"
+						} else {
+							result = num1 / num2
+						}
+					default:
+						result = "Invalid operator"
+				}
+				resultDiv.textContent = `Result : ${result}`
+			})
+		</script>
+	</body>
+</html>
