@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lecture - 01</title>
+	</head>
+	<body>
+		<form action="">
+			No.1: <input type="text" name="n1txt" />
+			<br />
+			No.2: <input type="text" name="n2txt" />
+			<br />
+			Ans: <input type="text" name="n3txt" />
+			<br />
+			<input type="button" value="Addition" name="btn1" onclick="add1(n1txt,n2txt,n3txt)" />
+		</form>
+
+		<script>
+			// alert("hi there!")
+			// confirm("Do you want to continue?")
+			// x = prompt("Enter your name : ")
+
+			function add1(c1, c2, c3) {
+				a = parseFloat(c1.value)
+				b = parseFloat(c2.value)
+
+				ans = a + b
+				alert("The addition=" + ans)
+				c3.value = ans
+			}
+		</script>
+	</body>
+</html>
