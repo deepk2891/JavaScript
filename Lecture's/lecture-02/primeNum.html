@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<form action="" name="form1">
+			Enter No. : <input type="text" name="n1txt" />
+			<br />
+			<select name="s1" id="">
+				<option value="-1"><-Select Operation></option>
+				<option value="1">Perfect</option>
+				<option value="2">Prime</option>
+			</select>
+			<br />
+			<input type="button" name="btn1" value="Find Fact" onclick="evaluate1(form1)" />
+		</form>
+
+		<script>
+			function evaluate1() {
+				var n = parseInt(document.forms.form1.n1txt.value)
+				var ch = document.forms.form1.s1.value
+
+				if (ch == 1) {
+					findPerfect(n)
+				} else if (ch == 2) {
+					if (findPrime(n)) {
+						alert("The number " + n + " is a prime!")
+					} else {
+						alert("The number " + n + " is not a prime!")
+					}
+				} else {
+					alert("Please select any of the operations!")
+				}
+			}
+
+			function findPrime(n) {
+				if (n <= 0) {
+					return false
+				}
+				for (i = 2; i < n; i++) {
+					if (n % i == 0) {
+						return false
+					}
+				}
+				return true
+			}
+
+			function findPerfect(n) {
+				sum = 0
+				for (i = 1; i < n; i++) {
+					if (n % i == 0) {
+						sum += i
+					}
+				}
+				if (sum == n) {
+					alert(n + " is a perfect number!")
+				} else {
+					alert(n + " is a not a perfect number!")
+				}
+			}
+		</script>
+	</body>
+</html>

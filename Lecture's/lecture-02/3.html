@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function findFact(num1) {
+				n = parseInt(num1)
+				f = 1
+				// alert(n);
+				for (i = 1; i <= n; i++) {
+					f *= i
+				}
+				alert("The factorial of " + num1 + " is : " + f)
+			}
+		</script>
+	</head>
+
+	<body>
+		<form name="">
+			Enter No.: <input type="text" name="n1txt" id="n1txt" />
+			<br />
+			<input type="button" name="btn1" value="Find Fact" onclick="findFact(n1txt.value)" />
+		</form>
+	</body>
+</html>

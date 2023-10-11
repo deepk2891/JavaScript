@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<form action="" name="form1">
+			Enter No. : <input type="text" name="n1txt" />
+			<br />
+			<input type="radio" name="r1" value="1" />Find Perfect.
+
+			<input type="radio" name="r1" value="2" />Find Prime.
+			<br />
+			<input type="button" name="btn1" value="Find Fact" onclick="evaluate1(form1)" />
+		</form>
+
+		<script>
+			function evaluate1(f1) {
+				with (f1) {
+					n = parseInt(n1txt.value)
+					ch = -111
+					if (r1[0].checked) {
+						ch = r1[0].value
+					} else if (r1[1].checked) {
+						ch = r1[1].value
+					}
+				}
+				// alert(ch)
+				if (ch == 1) {
+					findPerfect(n)
+				} else if (ch == 2) {
+					findPrime(n)
+				} else {
+					alert("Plz select any of the radio button option")
+				}
+			}
+
+			function findPrime(n) {}
+
+			function findPerfect(n) {
+				sum = 0
+				for (i = 1; i < n; i++) {
+					if (n % i == 0) {
+						sum += i
+					}
+				}
+				if (sum == n) {
+					alert(n + " is a perfect number!")
+				} else {
+					alert(n + " is not a perfect number!")
+				}
+			}
+		</script>
+	</body>
+</html>
