@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form name="frm1">
+			No.1 : <input type="text" name="n1txt" /><br />
+			No.2 : <input type="text" name="n2txt" /><br />
+			<select name="op" onchange="oper1(this,n1txt,n2txt,anstxt)">
+				<option value="0">Select Option</option>
+				<option value="1">Add</option>
+				<option value="2">Sub</option>
+				<option value="3">Reset</option>
+			</select>
+			<br />
+			Answer : <input type="text" name="anstxt" />
+		</form>
+
+		<script>
+			function oper1(c1, c2, c3, c4) {
+				choice = parseInt(c1.value)
+				n1 = parseInt(c2.value)
+				n2 = parseInt(c3.value)
+				n3 = parseInt(c4.value)
+
+				switch (choice) {
+					case 1:
+						n3 = n1 + n2
+						c4.value = n3
+						// alert("Addition is :" + n3)
+						alert(`Addition is : ${n3}`)
+						break
+					case 2:
+						n3 = n1 - n2
+						c4.value = n3
+						alert("Subtraction is : " + n3)
+						break
+					case 3:
+						c2.value = ""
+						c3.value = ""
+						c4.value = ""
+						break
+
+					default:
+						alert("Plz enter valid choice")
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form name="frm1">
+			Name: <input type="text" name="nmtxt" /><br />
+			Age: <input type="text" name="atxt" onblur="checkAge(this)" /><br />
+
+			<input type="submit" name="btn" />
+		</form>
+
+		<script>
+			function checkAge(c1) {
+				data = c1.value
+
+				if (isNaN(data)) {
+					c1.value = ""
+					alert("Please enter a proper number.")
+				} else {
+					a = parseInt(data)
+					if (a <= 0) {
+						c1.value = ""
+						alert("Entered age is not a valid age.")
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
