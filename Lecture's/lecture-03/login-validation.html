@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="processData.html" name="form1" method="post">
+			Use Id : <input type="text" name="usernametext" />
+			<br />
+			Password : <input type="password" name="passwordtext" />
+			<br />
+			<input type="submit" name="submit" value="login" onclick="return checkForm(this.form)" />
+		</form>
+
+		<script>
+			function checkBlank(inputElement, message) {
+				var data = inputElement.value
+				var length = data.length
+
+				if (length === 0) {
+					alert(message)
+					return false
+				}
+				return true
+			}
+
+			function checkForm(form) {
+				var usenameInput = form.elements["usernametext"]
+				var passwordInput = form.elements["passwordtext"]
+
+				if (!checkBlank(usenameInput, "User Name can not be left blank!")) {
+					return false
+				}
+				if (!checkBlank(passwordtext, "Password can not be left blank!")) {
+				}
+			}
+		</script>
+	</body>
+</html>

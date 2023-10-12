@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="processData.html" name="form1" method="post" onsubmit="return checkForm(form1)">
+			Use Id : <input type="text" name="usernametext" />
+			<br />
+			Password : <input type="password" name="passwordtext" />
+			<br />
+			Confirm Password : <input type="password" name="confirmpasswordtext" />
+			<br />
+			<input type="submit" name="submit" value="register" />
+		</form>
+
+		<script>
+			function checkBlank(inputElement, message) {
+				var data = inputElement.value
+				var length = data.length
+
+				if (length === 0) {
+					alert(message)
+					return false
+				}
+				return true
+			}
+
+			function checkPassConfPass(passwordInput, confirmPasswordInput, message) {
+				var password = passwordInput.value
+				var confirmPassword = confirmPasswordInput.value
+				if (password !== confirmPassword) {
+					alert(message)
+					return false
+				}
+				return true
+			}
+
+			function checkForm(f1) {
+				var usernameInput = f1.usernametext
+				var passwordInput = f1.passwordtext
+				var confirmPasswordInput = f1.confirmpasswordtext
+
+				if (!checkBlank(usernameInput, "Username can not be left blank!")) {
+					return false
+				}
+				if (!checkBlank(passwordInput, "password can not be left blank!")) {
+					return false
+				}
+				if (!checkPassConfPass(passwordInput, confirmPasswordInput, "Password and confirm pass must match! ")) {
+					return false
+				}
+			}
+		</script>
+	</body>
+</html>
