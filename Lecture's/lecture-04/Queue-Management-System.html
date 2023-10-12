@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Queue Management System</title>
+	</head>
+	<body>
+		<form name="form1" method="post">
+			<input type="text" name="ntxt" readonly /><br />
+			<input type="text" name="ntxt" readonly /><br />
+			<input type="text" name="ntxt" readonly /><br />
+			<input type="text" name="ntxt" readonly /><br />
+			<input type="text" name="ntxt" readonly /><br />
+			<input type="text" name="ntxt" readonly /><br />
+			<input type="text" name="ntxt" readonly /><br />
+
+			Rear : <input type="text" name="rtxt" value="-1" readonly />
+			<br />
+			Front : <input type="text" name="ftxt" value="-1" readonly />
+
+			<br />
+			Element : <input type="text" name="etxt" />
+			<br />
+
+			<input type="button" name="btn1" value="Insert" onclick="insertEle(form1)" />
+			<input type="button" name="btn1" value="Delete" onclick="del(form1)" />
+		</form>
+
+		<script>
+			function insertEle(f1) {
+				with (f1) {
+					data = ftxt.value
+					ele = etxt.value
+
+					if (rtxt.value == 6) {
+						alert("The Queue is overflow")
+					} else if (data == -1) {
+						f = -1
+						r = -1
+						f++
+						r++
+						ftxt.value = f
+						rtxt.value = r
+
+						ntxt[f].value = ele
+					} else {
+						r = parseInt(rtxt.value)
+						r++
+						ntxt[r].value = ele
+						rtxt.value = r
+					}
+				}
+			}
+			function del(f1) {
+				with (f1) {
+					f = ftxt.value
+					r = rtxt.value
+					if (f == -1) {
+						alert("The queue went underflow!")
+					} else {
+						alert("The element " + ntxt[f].value + " is deleted!")
+						ntxt[f].value = ""
+
+						if (f == r) {
+							ftxt.value = -1
+							rtxt.value = -1
+						} else {
+							f++
+							ftxt.value = f
+						}
+
+						if (f == -1) {
+							f++
+							rtxt.value = -1
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
