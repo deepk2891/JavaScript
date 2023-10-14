@@ -13,54 +13,154 @@
 
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Functions</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Functions</title>
-</head>
+	<body>
+		<script>
+			//🟨Function : let us reuse code
 
-<body>
-    <script>
-        //🟨Function : let us reuse code
+			function function1() {
+				console.log("hello") //Create function
+				console.log(2 + 2)
+			}
+			function1() //Running function
+			function1()
 
-        function function1 ()
-        {
-            console.log("hello"); //Create function
-            console.log(2 + 2);
-        }
-        function1(); //Running function
-        function1();
+			//🟨Rules for Function names = camelCase
+			//🟦1. Cant use special words  Example : function
+			//🟦2. Cant start with a number Example : 1function
+			//🟦3. Cant use special characters except $ _
 
-        //🟨Rules for Function names = camelCase
-        //🟦1. Cant use special words  Example : function
-        //🟦2. Cant start with a number Example : 1function
-        //🟦3. Cant use special characters except $ _
+			//🟨Return Statement : lets us get a value out of a function
 
-        //🟨Return Statement : lets us get a value out of a function
+			//🟨Parameter : puts a value into a function.
+			//🟨Syntax parameter names:  = camelCase
+			//🟦1. Cant use special words  Example : function
+			//🟦2. Cant start with a number Example : 1function
+			//🟦3. Cant use special characters except $ _
 
+			/*
+			     function calculation (parameter1)
+			     {
+			         console.log(parameter1 * 0.1);
+			     }
+			     */
 
-        //🟨Parameter : puts a value into a function.
-        //🟨Syntax parameter names:  = camelCase
-        //🟦1. Cant use special words  Example : function
-        //🟦2. Cant start with a number Example : 1function
-        //🟦3. Cant use special characters except $ _
+			function calculateTax(cost, taxPercent = 0.1) {
+				console.log(cost * taxPercent)
+			}
+			calculateTax(2000, 0.2)
+			calculateTax(5000)
 
-        /*
-        function calculation (parameter1)
-        {
-            console.log(parameter1 * 0.1);
-        }
-        */
+			//🟨Write a function that takes two numbers as parameters and returns their sum.
 
-        function calculateTax (cost,taxPercent = 0.1)
-        {
-            console.log(cost * taxPercent)
-        }
-        calculateTax(2000,0.2);
-        calculateTax(5000);
+			var x = 5
+			var y = 5
+			function addNumbers() {
+				var sum = x + y
+				return sum
+			}
+			var result = addNumbers()
+			console.log(result)
 
-    </script>
-</body>
+			//🟨 Create a function that calculates the area of a rectangle. It should take the width and height
+			//   as parameters and return the area.
 
+			var height = 500
+			var width = 750
+			function rectangleAreaCalculation() {
+				var area = height * width
+				return area
+			}
+			var rectangleArea = rectangleAreaCalculation()
+			console.log(rectangleArea)
+
+			//🟨 Write a function that checks if a given number is even or odd. The function should return "Even" or
+			//   "Odd" based on the input.
+
+			function checkEvenOdd(number) {
+				if (number % 2 === 0) {
+					return "Even"
+				} else {
+					return "Odd"
+				}
+			}
+			console.log(checkEvenOdd(5))
+
+			//🟨 Develop a function that finds the maximum of three numbers. The function should take three
+			//   parameters and return the largest number.
+
+			num1 = 5
+			num2 = 7
+			num3 = 6
+			function biggest_in_3num() {
+				if (num1 > num2 && num1 > num3) {
+					return `${num1} is Biggest`
+				} else if (num2 > num1 && num2 > num3) {
+					return `${num2} is Biggest`
+				} else {
+					return `${num3} is Biggest`
+				}
+			}
+			console.log(biggest_in_3num())
+
+			//🟨 Create a function that takes a string as input and returns the number of vowels (a, e, i, o, u)
+			//   in the string.
+
+			function countVowels(inputString) {
+				let vowelCount = 0
+				const vowels = "aeiou"
+				for (i = 0; i < inputString.length; i++) {
+					if (vowels.includes(inputString[i].toLowerCase())) {
+						vowelCount++
+					}
+				}
+				return vowelCount
+			}
+			console.log(countVowels(`Hello Deep!`))
+
+			//🟨 Write a function that calculates the factorial of a positive integer. The function should take an integer
+			//   as a parameter and return its factorial.
+
+			function factorial(n) {
+				if (n === 0 || n === 1) {
+					return 1
+				}
+				return n * factorial(n - 1)
+			}
+
+			//🟨 Develop a function that checks if a given string is a palindrome. The function should return true if
+			//   the string is a palindrome and false otherwise.
+
+			function isPalindrome(str) {
+				str = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "")
+				return str === str.split("").reverse().join("")
+			}
+
+			//🟨 Create a function that takes an array of numbers as input and returns the sum of all the numbers in
+			//   the array.
+
+			function sumArray(arr) {
+				return arr.reduce((acc, current) => acc + current, 0)
+			}
+
+			//🟨 Write a function that generates and returns a random integer between a specified minimum and maximum
+			//   value. The function should take the minimum and maximum values as parameters.
+
+			function randomInteger(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min
+			}
+
+			//🟨 Develop a function that converts a temperature in degrees Celsius to Fahrenheit. The function should
+			//   take the temperature in Celsius as a parameter and return the equivalent temperature in Fahrenheit.
+
+			function celsiusToFahrenheit(celsius) {
+				return (celsius * 9) / 5 + 32
+			}
+		</script>
+	</body>
 </html>
