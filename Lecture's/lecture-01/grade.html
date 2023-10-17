@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div style="text-align: center">
+			<h1>Check your grade here ...</h1>
+			<input type="number" placeholder="Enter marks" id="numberInput" />
+			<button onclick="calculatePercentage()">Get Your Grade</button>
+			<h2 id="message"></h2>
+		</div>
+		<script>
+			function calculatePercentage() {
+				var numberInput = document.getElementById("numberInput").value
+
+				if (numberInput > 100 || numberInput < 0) {
+					printMessage("message", "Please enter the number between 0 to 100")
+				} else {
+					if (numberInput >= 85 && numberInput <= 100) {
+						printMessage("message", "You got A Grade!")
+					} else if (numberInput >= 71 && numberInput <= 84) {
+						printMessage("message", "You Got B Grade!")
+					} else if (numberInput >= 55 && numberInput <= 70) {
+						printMessage("message", "You got C Grade!")
+					} else if (numberInput >= 34 && numberInput <= 54) {
+						printMessage("message", "You got D Grade!")
+					} else {
+						printMessage("message", "You Got Failed!")
+					}
+				}
+			}
+			function printMessage(id, msg) {
+				document.getElementById(id).innerHTML = msg
+			}
+		</script>
+	</body>
+</html>

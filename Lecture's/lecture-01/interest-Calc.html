@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div style="text-align: center">
+			<h1>Interest Calculator</h1>
+			<input type="number" placeholder="Enter amout Rs." id="inputAmount" /><br />
+			<input type="number" placeholder="Enter time" id="inputTime" /><br />
+			<select id="loanType">
+				<option value="home">Home</option>
+				<option value="car">Car</option>
+				<option value="bike">Bike</option>
+			</select>
+			<button onclick="calculateInterest()">Calculate Interest</button>
+			<h2 id="showFinalInterest"></h2>
+		</div>
+
+		<script>
+			function calculateInterest() {
+				var inputAmount = parseFloat(document.getElementById("inputAmount").value)
+				var inputTime = parseFloat(document.getElementById("inputTime").value)
+				var loanType = document.getElementById("loanType").value
+
+				if (loanType == "home") {
+					var percent = 8
+					Calc(inputAmount, inputTime, percent)
+				} else if (loanType == "car") {
+					var percent = 12
+					Calc(inputAmount, inputTime, percent)
+				} else if (loanType == "bike") {
+					var percent = 10
+					Calc(inputAmount, inputTime, percent)
+				}
+			}
+			function Calc(amount, year, percent) {
+				var si = (amount * year * percent) / 100
+				document.getElementById("showFinalInterest").innerHTML = `Rs. ${si}`
+			}
+		</script>
+	</body>
+</html>
