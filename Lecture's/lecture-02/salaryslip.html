@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Salary slip Generator</title>
+	</head>
+	<body>
+		<input type="text" id="salary" placeholder="Enter your salary" onkeyup="checkEnter(event)" /><br />
+		<button onclick="calculate()">Calculate</button>
+
+		<h1 id="bs"></h1>
+		<h1 id="hra"></h1>
+		<h1 id="da"></h1>
+		<h1 id="gs"></h1>
+
+		<script>
+			function calculate() {
+				var salary = parseFloat(document.getElementById("salary").value)
+
+				var hra = (salary * 5) / 100
+				var da = (salary * 10) / 100
+				var gs = hra + da
+				document.getElementById("bs").textContent = `Salary : ${salary}`
+				document.getElementById("hra").innerHTML = `hra : ${hra}`
+				document.getElementById("da").innerHTML = `da : ${da}`
+				document.getElementById("gs").innerHTML = `Gross salary : ${gs}`
+			}
+
+			function checkEnter(even) {
+				if (event.key === "Enter") {
+					calculate()
+				}
+			}
+		</script>
+	</body>
+</html>
