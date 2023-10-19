@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p>old pass : 123</p>
+		Enter Old password : <input type="number" placeholder="Enter old password" id="oldPass" /><br /><br />
+		Enter New passowrd : <input type="number" placeholder="Enter new password" id="newPass" /><br /><br />
+		Enter Confirm password : <input type="number" placeholder="Enter confirm password" id="confirmPass" /><br /><br />
+		<button onclick="check()">submit</button>
+		<p id="message"></p>
+		<script>
+			function check() {
+				oldP = 123
+				var oldPass = document.getElementById("oldPass").value
+				var newPass = document.getElementById("newPass").value
+				var confirmPass = document.getElementById("confirmPass").value
+				var message = document.getElementById("message")
+
+				if (oldPass != "" && newPass != "" && confirmPass != "") {
+					if (oldPass == oldP) {
+						if (oldPass != newPass) {
+							if (newPass == confirmPass) {
+								document.getElementById("message").innerHTML = "Password changed successfully ...!!!"
+							} else {
+								document.getElementById("message").innerHTML = "new password and confirm password is not match ...!!!"
+							}
+						} else {
+							document.getElementById("message").innerHTML = "Old password and new password are same ...!!!"
+						}
+					} else {
+						document.getElementById("message").innerHTML = "Wrong old password ...!!!"
+					}
+				} else {
+					document.getElementById("message").innerHTML = "Enter the password ...!!!"
+				}
+			}
+		</script>
+	</body>
+</html>
