@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise-10e</title>
+		<style>
+			.btn-toggle {
+				color: white;
+				background-color: black;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 15px;
+			}
+			.is-toggled {
+				background-color: rgb(209, 209, 209);
+				color: black;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn-toggle" onclick="toggleButton()">Gaming</button>
+		<button class="btn-toggle" onclick="toggleButton()">Music</button>
+		<button class="btn-toggle" onclick="toggleButton()">Teck</button>
+
+		<script>
+			//🟨 error solved in 10f or 10g - [ Music and Tech is not toggling ]
+
+			var buttonElement = document.querySelector(".btn-toggle")
+
+			function toggleButton() {
+				if (buttonElement.classList.contains("btn-toggle")) {
+					buttonElement.classList.remove("btn-toggle")
+					buttonElement.classList.add("is-toggled")
+				} else {
+					buttonElement.classList.remove("is-toggled")
+					buttonElement.classList.add("btn-toggle")
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise-10g</title>
+		<style>
+			.btn-toggle {
+				color: white;
+				background-color: black;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 15px;
+			}
+			.is-toggled {
+				background-color: rgb(209, 209, 209);
+				color: black;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn-toggle" onclick="toggleButton(this)">Gaming</button>
+		<button class="btn-toggle" onclick="toggleButton(this)">Music</button>
+		<button class="btn-toggle" onclick="toggleButton(this)">Teck</button>
+
+		<script>
+			function toggleButton(button) {
+				if (button.classList.contains("btn-toggle")) {
+					button.classList.remove("btn-toggle")
+					button.classList.add("is-toggled")
+				} else {
+					button.classList.remove("is-toggled")
+					button.classList.add("btn-toggle")
+				}
+			}
+		</script>
+	</body>
+</html>

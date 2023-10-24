@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise-10f</title>
+		<style>
+			.btn-toggle {
+				color: white;
+				background-color: black;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 15px;
+			}
+			.is-toggled {
+				background-color: rgb(209, 209, 209);
+				color: black;
+				border: none;
+				border-radius: 5px;
+				padding: 10px;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Continuing from [ 10e ], use a function to reuse the code, and separate each language into its own file(if you didn't do this already). -->
+
+		<button class="btn-toggle" onclick="toggleButton(this)">Gaming</button>
+
+		<script>
+			toggleButton("gamingBtn")
+
+			//🟨USE-👆-THIS IF THIS-👇-CODE IS IN EXTERNAL SCRIPT.JS FILE🟨
+
+			// function toggleButton(button) {
+			// 	if (button.classList.contains("btn-toggle")) {
+			// 		button.classList.remove("btn-toggle")
+			// 		button.classList.add("is-toggled")
+			// 	} else {
+			// 		button.classList.remove("is-toggled")
+			// 		button.classList.add("btn-toggle")
+			// 	}
+			// }
+		</script>
+	</body>
+</html>
