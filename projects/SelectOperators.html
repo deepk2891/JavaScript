@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Operator</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" /> -->
+		<style>
+			.arithmaticOp,
+			.comparisonOp {
+				display: none;
+			}
+		</style>
+	</head>
+	<body class="text-center">
+		<h1 class="text-2xl md:text-3xl lg:text-4xl text-center font-medium text-black py-8 mb-6 bg-blue-200">
+			Operators in <span class="text-indigo-600">JavaScript Course</span>
+			<a href="https://github.com/deepk2891/Javascript/tree/main/projects/SelectOperators.html" target="_blank" class="absolute right-6 top-0 text-sm">view code</a>
+		</h1>
+		<h2 class="text-xl md:text-3xl lg:text-4xl text-center text-black my-6">Deep Kothari (Full-stack)</h2>
+		<div class="text-center w-full md:w-2/3 lg:w-1/3 m-auto">
+			<input type="number" placeholder="Enter number" class="block w-full text-xl text-center mb-5 p-3 mb-5 border border-gray-500 rounded-none text-center" id="input1" />
+			<input type="number" placeholder="Enter number" class="block w-full text-xl text-center mb-5 p-3 mb-5 border border-gray-500 rounded-none text-center" id="input2" />
+			<select id="operatorSelect" class="block w-full text-center text-xl mb-5 p-4 mb-5 border border-gray-500 rounded-none text-center" onchange="showHideOperators()">
+				<option class="p-4 text-xl" value="">Select calculation</option>
+				<option class="p-4 text-xl" value="arithmatic" class="arithmatic">Arithmetic operator</option>
+				<option class="p-4 text-xl" value="comparison" class="comparison">Comparison operator</option>
+			</select>
+
+			<div class="arithmaticOp">
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('add')">+</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('subtract')">-</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('multiply')">*</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('divide')">/</button>
+			</div>
+
+			<div class="comparisonOp">
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('equal')">==</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('lessThan')">&lt;</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('lessThanEqual')">&lt;=</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('greaterThan')">&gt;</button>
+				<button class="h-14 w-14 text-2xl font-medium bg-indigo-200 hover:bg-indigo-400" onclick="calculateResult('greaterThanEqual')">&gt;=</button>
+			</div>
+
+			<p id="result" class="text-2xl font-medium text-indigo-600 mt-4"></p>
+		</div>
+
+		<script>
+			function showHideOperators() {
+				var operatorSelect = document.getElementById("operatorSelect")
+				var arithmaticOp = document.querySelector(".arithmaticOp")
+				var comparisonOp = document.querySelector(".comparisonOp")
+
+				if (operatorSelect.value === "arithmatic") {
+					arithmaticOp.style.display = "block"
+					comparisonOp.style.display = "none"
+				} else if (operatorSelect.value === "comparison") {
+					arithmaticOp.style.display = "none"
+					comparisonOp.style.display = "block"
+				} else {
+					arithmaticOp.style.display = "none"
+					comparisonOp.style.display = "none"
+				}
+			}
+
+			function calculateResult(operator) {
+				var input1 = parseFloat(document.getElementById("input1").value)
+				var input2 = parseFloat(document.getElementById("input2").value)
+				var result = document.getElementById("result")
+
+				if (isNaN(input1) || isNaN(input2)) {
+					result.textContent = "Please enter valid numbers."
+				} else {
+					switch (operator) {
+						case "add":
+							result.textContent = `${input1} + ${input2} = ${input1 + input2}`
+							break
+						case "subtract":
+							result.textContent = `${input1} - ${input2} = ${input1 - input2}`
+							break
+						case "multiply":
+							result.textContent = `${input1} * ${input2} = ${input1 * input2}`
+							break
+						case "divide":
+							if (input2 !== 0) {
+								result.textContent = `${input1} / ${input2} = ${input1 / input2}`
+							} else {
+								result.textContent = "Cannot divide by zero."
+							}
+							break
+						case "equal":
+							result.textContent = `${input1} == ${input2} = ${input1 == input2}`
+							break
+						case "lessThan":
+							result.textContent = `${input1} < ${input2} = ${input1 < input2}`
+							break
+						case "lessThanEqual":
+							result.textContent = `${input1} <= ${input2} = ${input1 <= input2}`
+							break
+						case "greaterThan":
+							result.textContent = `${input1} > ${input2} = ${input1 > input2}`
+							break
+						case "greaterThanEqual":
+							result.textContent = `${input1} >= ${input2} = ${input1 >= input2}`
+							break
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
