@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//🟨 Basics of Arrays :
+
+			var myArray = [1, 2, 3]
+
+			console.log(myArray)
+			console.log(myArray[1])
+
+			myArray[0] = 4
+			console.log(myArray)
+
+			//🟨 Syntax Rules for Arrays [] :
+			//🟩 [ List , of , values ]
+
+			//🟩 const myArray = [ 1, 2, 3 ]
+			//		INDEX  -->     0  1  2
+
+			//🟦 Inside of Array we can put any type of value
+
+			var myArray = [1, "hello", true, { name: "bob" }, [1, 2]]
+			console.log(typeof [1, 2])
+
+			console.log(Array.isArray([1, 2])) //true
+			console.log(Array.isArray(true))
+			console.log(Array.isArray("hello"))
+
+			//🟨 .push() - Adds a value to the end of the array
+
+			myArray.push(100)
+			console.log(myArray)
+
+			//🟨 .splice() - Removes a value from an array
+
+			myArray.splice([5]) //100
+			console.log(myArray)
+		</script>
+	</body>
+</html>
