@@ -1,0 +1,50 @@
+<script>
+	//🟨 Loops : (Let us run some code over and over like a loop)
+
+	//🟩Loop Variable
+	// var i = 1
+
+	//🟩Loop Condition
+	// while (i <= 5) {
+	// 	console.log(i)
+	// 	i++
+	// }
+
+	// for (var i; i <= 10; i++) {
+	// 	console.log(i)
+	// }
+
+	var randomNumber = 0
+	while (randomNumber < 0.5) {
+		randomNumber = Math.random()
+	}
+	console.log(randomNumber)
+
+	const todoList = ["make dinner", "wash dishes", "watch youtube"]
+	let todoListHTML = ""
+
+	for (let i = 0; i < todoList.length; i++) {
+		const value = todoList[i]
+		console.log(value)
+	}
+
+	//🟨 Accumulator Pattern :-
+	//🟩   Create a variable to store the variable
+	//🟩   Loop through the array and update the result
+
+	const nums = [1, 2, 3]
+	//🟩 Accumulator Variable
+	let total = 0
+	for (let i = 0; i < nums.length; i++) {
+		const num = nums[i]
+		total += num
+	}
+	console.log(total)
+
+	const numsDoubled = []
+	for (let i = 0; i < nums.length; i++) {
+		const num = nums[i]
+		numsDoubled.push(num * 2)
+	}
+	console.log(`${nums} Converted into ${numsDoubled}`)
+</script>
