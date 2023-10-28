@@ -1,0 +1,38 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 11 : Arrays & Loops
+    
+    Exercise - 11c 
+
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 11c</title>
+	</head>
+	<body>
+		<script>
+			function arraySwap(array) {
+				const lastIndex = array.length - 1
+
+				const lastValue = array[lastIndex]
+				const firstValue = array[0]
+
+				array[0] = lastValue
+				array[lastValue] = firstValue
+
+				return array
+			}
+			console.log(arraySwap([1, 2, 3]))
+			console.log(arraySwap(["deep1", "deep2", "deep3"]))
+		</script>
+	</body>
+</html>

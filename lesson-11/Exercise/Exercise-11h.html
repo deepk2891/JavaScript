@@ -1,0 +1,35 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!-- 
+
+    Lesson 11 : Arrays & Loops
+    
+    Exercise - 11h   
+
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 11h</title>
+	</head>
+	<body>
+		<script>
+			function addOne(array) {
+				const result = []
+
+				for (let i = 0; i < array.length; i++) {
+					result.push(array[i] + 1)
+				}
+				return result
+			}
+			console.log(addOne([1, 2, 3]))
+			console.log(addOne([-2, -1, 0, 99]))
+		</script>
+	</body>
+</html>
