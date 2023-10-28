@@ -11,8 +11,22 @@
 		<input type="text" placeholder="Todo name" class="js-name-input" />
 		<button onclick="addTodo()">Add</button>
 
+		<div class="js-todo-list"></div>
+
 		<script>
 			const todoList = []
+
+			function renderTodoList() {
+				let todoListHTML = ""
+
+				for (let i = 0; i < todoList.length; i++) {
+					const todo = todoList[i]
+					const html = `<p>${todo}</p>`
+					todoListHTML += html
+				}
+				console.log(todoListHTML)
+				document.querySelector(".js-todo-list").innerHTML = todoListHTML
+			}
 
 			function addTodo() {
 				var inputElement = document.querySelector(".js-name-input")
@@ -22,6 +36,8 @@
 				console.log(todoList)
 
 				inputElement.value = ""
+
+				renderTodoList()
 			}
 		</script>
 	</body>
