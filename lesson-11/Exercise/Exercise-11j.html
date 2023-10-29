@@ -1,6 +1,6 @@
 <!-- 
     Lesson 11 : Arrays & Loops
-    🟩Exercise - 11g 
+    🟩Exercise - 11j  
     🟩Question
     🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
 -->
@@ -10,15 +10,20 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Exercise - 11g</title>
+		<title>Exercise - 11j</title>
 	</head>
 	<body>
 		<script>
-			myArray = [1, 2, 3]
-			for (let i = 0; i < myArray.length; i++) {
-				myArray[i] += 1
+			function addArray(array1, array2) {
+				const result = []
+
+				for (let i = 0; i < array1.length; i++) {
+					result.push(array1[i] + array2[i])
+				}
+
+				return result
 			}
-			console.log(myArray)
+			console.log(addArray([1, 2, 3], [1, 2, 3]))
 		</script>
 	</body>
 </html>

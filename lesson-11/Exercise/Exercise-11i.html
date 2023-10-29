@@ -1,6 +1,6 @@
 <!-- 
     Lesson 11 : Arrays & Loops
-    🟩Exercise - 11g 
+    🟩Exercise - 11i  
     🟩Question
     🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
 -->
@@ -10,15 +10,22 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Exercise - 11g</title>
+		<title>Exercise - 11i</title>
 	</head>
 	<body>
 		<script>
-			myArray = [1, 2, 3]
-			for (let i = 0; i < myArray.length; i++) {
-				myArray[i] += 1
+			function addNum(array, num) {
+				const result = []
+
+				for (let i = 0; i < array.length; i++) {
+					result.push(array[i] + num)
+				}
+
+				return result
 			}
-			console.log(myArray)
+			console.log(addNum([1, 2.3], 2))
+			console.log(addNum([1, 2, 3], 3))
+			console.log(addNum([-2, -1, 0, 99], 2))
 		</script>
 	</body>
 </html>
