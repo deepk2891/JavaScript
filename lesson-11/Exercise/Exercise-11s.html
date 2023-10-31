@@ -1,0 +1,34 @@
+<!-- 
+    Lesson 11 : Arrays & Loops
+    🟩Exercise - 11s  
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 11s</title>
+	</head>
+	<body>
+		<script>
+			function removeEgg(foods) {
+				const result = []
+				let eggsRemoved = 0
+
+				for (let i = 0; i < foods.length; i++) {
+					if (foods[i] === "egg" && eggsRemoved < 2) {
+						eggsRemoved++
+						continue
+					}
+					result.push(foods[i])
+				}
+
+				return result
+			}
+			console.log(removeEgg(["egg", "oats", "prrotein", "egg", "egg"]))
+		</script>
+	</body>
+</html>

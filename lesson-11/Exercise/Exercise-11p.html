@@ -1,0 +1,33 @@
+<!-- 
+    Lesson 11 : Arrays & Loops
+    🟩Exercise - 11p 
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 11p</title>
+	</head>
+	<body>
+		<script>
+			myArray = ["apple", "search", "mango", "search"]
+			flag = false
+
+			for (let i = 0; i < myArray.length; i++) {
+				if (myArray[i] == "search") {
+					console.log(i)
+					flag = true
+					//🟨
+					break
+				}
+			}
+			if (!flag) {
+				console.log(-1)
+			}
+		</script>
+	</body>
+</html>

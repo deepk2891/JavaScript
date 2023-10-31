@@ -1,0 +1,65 @@
+<!-- 
+    Lesson 11 : Arrays & Loops
+    🟩Exercise - 11r  
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-11/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 11r</title>
+	</head>
+	<body>
+		<script>
+			function removeEgg(foods) {
+				let result = []
+
+				for (let i = 0; i < foods.length; i++) {
+					if (foods[i] === "egg") {
+						continue
+					}
+					result.push(foods[i])
+				}
+
+				return result
+			}
+			console.log(removeEgg(["egg", "protein", "banana", "egg"]))
+
+			//🟩
+
+			// function removeEgg(array) {
+			// 	for (let i = 0; i < array.length; i++) {
+			// 		if (array[i] === "egg") {
+			// 			array.splice(i, 1)
+			// 			i--
+			// 		}
+			// 	}
+			// 	console.log(array)
+			// }
+			// console.log(removeEgg(["egg", "oats", "prrotein", "egg"]))
+
+			//🟩
+
+			// function removeEgg(array) {
+			// return array.filter((item) => item !== "egg")
+			// }
+			// console.log(removeEgg(["egg", "oats", "protein", "egg"]))
+
+			//🟩
+
+			// 	function removeEgg(array) {
+			// 		for (let i = array.length - 1; i >= 0; i--) {
+			// 			if (array[i] === "egg") {
+			// 				array.splice(i, 1)
+			// 			}
+			// 		}
+			// 	}
+			// 	const foodList = ["egg", "oats", "protein", "egg"]
+			// 	removeEgg(foodList)
+			// 	console.log(foodList)
+		</script>
+	</body>
+</html>
