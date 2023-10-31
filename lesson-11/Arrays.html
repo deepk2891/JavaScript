@@ -1,3 +1,18 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!--
+
+     Lesson 11 : Arrays & Loops
+
+     1. Arrays = List of values
+	 2. Loops (while loop, for loop)
+	 3. Accumulator pattern
+	 4. Created a todo list project
+	 5. Array are references, destructuring
+	 6. More feature in loops: break, continue, loops inside a function
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -41,6 +56,52 @@
 
 			myArray.splice([5]) //100
 			console.log(myArray)
+
+			//🟨-----------------PART-2-----------------
+
+			const array1 = [1, 2, 3]
+			const array2 = array1.slice()
+			array2.push(1)
+			console.log(array1)
+			console.log(array2)
+
+			const [firstValue, secondValue] = [1, 2, 3]
+
+			for (let i = 1; i <= 10; i++) {
+				if (i % 3 === 0) {
+					continue //🟨Skip
+				}
+				console.log(i)
+				if (i === 8) {
+					break //🟨Stop
+				}
+			}
+
+			let a = 1
+			while (a <= 10) {
+				if (a % 3 === 0) {
+					a++
+					continue
+				}
+				console.log(a)
+				a++
+			}
+
+			function doubleArray(nums) {
+				let numsDoubled = []
+
+				for (let i = 0; i < nums.length; i++) {
+					const num = nums[i]
+					if (num === 0) {
+						return numsDoubled
+					}
+					numsDoubled.push(num * 2)
+				}
+				// console.log(numsDoubled)
+				return numsDoubled
+			}
+			// doubleArray([1, 1, 3])
+			console.log(doubleArray([1, 0, 3]))
 		</script>
 	</body>
 </html>
