@@ -6,30 +6,16 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<button onclick="" class="js-button">Click</button>
-
 		<script>
-			const buttonElement = document.querySelector(".js-button")
-
-			const eventListener = () => {
-				console.log("click")
-			}
-			buttonElement.addEventListener("click", eventListener)
-
-			buttonElement.removeEventListener("click", eventListener)
-
-			buttonElement.addEventListener("click", () => {
-				console.log("click2")
-			})
-
-			greeting()
+			greeting() //🟨-Hoisting  Declaration before Initialization
 			function greeting() {
 				console.log("hello")
 			}
 			greeting()
 
 			const num = 2
-			const function1 = function () {
+			//🟨-Functions are values ( we can save it in a variable )
+			const function1 = function () /*-🟨Anonymous function (without name)*/ {
 				console.log("hello2")
 			}
 
@@ -37,14 +23,17 @@
 			console.log(typeof function1)
 			function1()
 
+			//🟨-Can save a value in a object ✔
 			const object1 = {
 				num: 2,
 				fun: function () {
+					//🟨-Method ( Function saved inside an object )
 					console.log("hello3")
 				},
 			}
 			object1.fun()
 
+			//🟨-Passing a value into a function
 			function display(param) {
 				console.log(param)
 			}
@@ -56,6 +45,24 @@
 			run(function () {
 				console.log("hello4")
 			})
+
+			//🟨-setTimeout()
+			//🟩-allows us to run a function in the future
+			setTimeout(function () {
+				console.log("timeout")
+				console.log("timeout2")
+			}, 3000)
+			//🟨-How long to wait before running this function (milliseconds)
+
+			//🟨-Asyncronous Code ( won't wait for a line to finish before going to the next line )
+			console.log("next line")
+
+			//🟨-setInterval
+			setInterval(function () {
+				console.log("interval")
+			}, 3000)
+			//🟩-Keep running the function every 3 seconds
+			console.log("next line2")
 		</script>
 	</body>
 </html>
