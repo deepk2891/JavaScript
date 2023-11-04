@@ -63,6 +63,16 @@
 			}, 3000)
 			//🟩-Keep running the function every 3 seconds
 			console.log("next line2")
+
+			x = ["make dinner", "wash dishes", "watch youtube"].forEach(function (value, index) {
+				if (value === "wash dishes") {
+					return
+				}
+				console.log(index)
+				console.log(value)
+			})
+
+			//🟨if we want to use break; then its better to use a regular for loop.
 		</script>
 	</body>
 </html>
