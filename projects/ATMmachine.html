@@ -116,13 +116,28 @@
 				}
 			})
 
-			checkBalanceButton.addEventListener("click", () => {})
+			checkBalanceButton.addEventListener("click", () => {
+				if (currentUser) {
+					resultElement.innerHTML = `Your Balance is ${currentUser.balance}`
+				} else {
+					resultElement.innerHTML = `Please log in first`
+				}
+			})
 
 			dipositButton.addEventListener("click", () => {})
 
 			withdrawButton.addEventListener("click", () => {})
 
-			exitButton.addEventListener("click", () => {})
+			exitButton.addEventListener("click", () => {
+				if (currentUser) {
+					currentUser = null
+					document.getElementById("user").value = "" // Clear the user input field
+					document.getElementById("pin").value = "" // Clear the pin input field
+					resultElement.innerHTML = "Goodbye!..."
+				} else {
+					resultElement.innerHTML = "Please log in first"
+				}
+			})
 		</script>
 	</body>
 </html>
