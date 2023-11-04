@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ATM</title>
+		<style>
+			body {
+				font-size: 20px;
+			}
+			.atm {
+				width: 300px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.input-container {
+				margin: 10px 0;
+			}
+			input {
+				font-size: 20px;
+
+				padding: 5px;
+			}
+			button {
+				font-size: 20px;
+
+				padding: 5px 10px;
+				margin: 5px 0;
+			}
+
+			#result {
+				margin-top: 10px;
+				font-weight: bold;
+				border: 1px solid black;
+				height: 20px;
+				width: 200px;
+				padding: 5px;
+				background-color: #dddddd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table border="1" style="width: 250px; border-collapse: collapse">
+			<tr>
+				<td>UserName</td>
+				<td>Pin</td>
+			</tr>
+			<tr>
+				<td>user1</td>
+				<td>1111</td>
+			</tr>
+			<tr>
+				<td>user2</td>
+				<td>2222</td>
+			</tr>
+		</table>
+
+		<h1>ATM</h1>
+		<div class="input-container">
+			User :
+			<input type="text" id="user" />
+		</div>
+		<div class="input-container">
+			Pin :
+			<input type="password" id="pin" />
+		</div>
+		<button id="login-button">Login</button>
+
+		<div class="operations">
+			<button id="check-balance-button">Check balance</button>
+			<button id="diposit-button">Diposit</button>
+			<button id="withdraw-button">Withdraw</button>
+			<button id="exit-button">Exit</button>
+		</div>
+
+		<div id="result">Hi, there!...</div>
+
+		<script>
+			const users = [
+				{
+					user: "user1",
+					pin: "1111",
+					balance: "1000",
+				},
+				{
+					user: "user2",
+					pin: "2222",
+					balance: "2000",
+				},
+			]
+
+			let currentUser = null
+
+			const userInputElement = document.getElementById("user").value
+			const pinInputElement = document.getElementById("pin").value
+			const resultElement = document.getElementById("result")
+
+			const loginButton = document.getElementById("login-button")
+			const checkBalanceButton = document.getElementById("check-balance-button")
+			const dipositButton = document.getElementById("diposit-button")
+			const withdrawButton = document.getElementById("withdraw-button")
+			const exitButton = document.getElementById("exit-button")
+
+			loginButton.addEventListener("click", () => {
+				const user = document.getElementById("user").value
+				const pin = document.getElementById("pin").value
+
+				currentUser = users.find((u) => u.user === user && u.pin === pin)
+
+				if (currentUser) {
+					resultElement.innerHTML = `Welcome ${user}!`
+				} else {
+					resultElement.innerHTML = `Invalid user or PIN.`
+				}
+			})
+
+			checkBalanceButton.addEventListener("click", () => {})
+
+			dipositButton.addEventListener("click", () => {})
+
+			withdrawButton.addEventListener("click", () => {})
+
+			exitButton.addEventListener("click", () => {})
+		</script>
+	</body>
+</html>
