@@ -33,8 +33,8 @@
 				margin-top: 10px;
 				font-weight: bold;
 				border: 1px solid black;
-				height: 20px;
-				width: 200px;
+				line-height: 1.3;
+				max-width: 300px;
 				padding: 5px;
 				background-color: #dddddd;
 			}
@@ -82,12 +82,12 @@
 				{
 					user: "user1",
 					pin: "1111",
-					balance: "1000",
+					balance: 1000,
 				},
 				{
 					user: "user2",
 					pin: "2222",
-					balance: "2000",
+					balance: 2000,
 				},
 			]
 
@@ -124,9 +124,33 @@
 				}
 			})
 
-			dipositButton.addEventListener("click", () => {})
+			dipositButton.addEventListener("click", () => {
+				if (currentUser) {
+					const amount = parseFloat(prompt("Enter the deposit amount:"))
+					if (!isNaN(amount) && amount > 0) {
+						currentUser.balance += amount
+						resultElement.innerHTML = `You've deposited Rs.${amount}. Total balance is ${currentUser.balance}`
+					} else {
+						resultElement.innerHTML = `Invalid deposit amount.`
+					}
+				} else {
+					resultElement.innerHTML = `Please log in first`
+				}
+			})
 
-			withdrawButton.addEventListener("click", () => {})
+			withdrawButton.addEventListener("click", () => {
+				if (currentUser) {
+					const amount = parseFloat(prompt("Enter the withdrawal amount : "))
+					if (!isNaN(amount) && amount > 0 && amount <= currentUser.balance) {
+						currentUser.balance -= amount
+						resultElement.innerHTML = `You've withdrawal Rs.${amount}. Total balance is ${currentUser.balance}`
+					} else {
+						resultElement.innerText = "Invalid withdrawal amount or insufficient funds."
+					}
+				} else {
+					resultElement.innerHTML = `Please log in first`
+				}
+			})
 
 			exitButton.addEventListener("click", () => {
 				if (currentUser) {
