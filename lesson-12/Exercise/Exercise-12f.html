@@ -1,0 +1,42 @@
+<!-- 
+    Lesson 12 : Advance Functions
+    🟩Exercise - 12f  
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-12/README.md
+    🟨Challenge Exercise
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 12f</title>
+		<style>
+			.js-message {
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="js-button" onclick="updateButton()">Add to cart</button>
+		<span class="js-message">Added</span>
+
+		<script>
+			let timeoutId
+
+			const button = document.querySelector(".js-button")
+			const message = document.querySelector(".js-message")
+
+			function updateButton() {
+				message.style.opacity = 1
+
+				clearTimeout(timeoutId)
+
+				timeoutId = setTimeout(function () {
+					message.style.opacity = 0
+				}, 2000)
+			}
+		</script>
+	</body>
+</html>

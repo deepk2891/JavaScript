@@ -1,0 +1,32 @@
+<!-- 
+    Lesson 12 : Advance Functions
+    🟩Exercise - 12h 
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-12/README.md
+    🟨Challenge Exercise
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 12h</title>
+	</head>
+	<body>
+		<button onclick="messages++">Add</button>
+		<button onclick="messages--">Remove</button>
+
+		<script>
+			let messages = 2
+
+			setInterval(() => {
+				if (document.title === "Exercise - 12h") {
+					document.title = `(${messages}) New messagees`
+				} else {
+					document.title = "Exercise - 12h"
+				}
+			}, 1500)
+		</script>
+	</body>
+</html>
