@@ -1,0 +1,38 @@
+<!-- 
+    Lesson 12 : Advance Functions
+    🟩Exercise - 12e
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-12/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 12e</title>
+		<style>
+			.message {
+				display: none;
+				/* opacity: 0; */
+			}
+		</style>
+	</head>
+	<body>
+		<button class="js-button" onclick="updateButton()">Add to cart</button>
+		<span class="message">Added</span>
+
+		<script>
+			const buttonElement = document.querySelector(".js-button")
+			const messageElement = document.querySelector(".message")
+
+			function updateButton() {
+				messageElement.style.display = "block"
+
+				setInterval(() => {
+					messageElement.style.display = "none"
+				}, 2000)
+			}
+		</script>
+	</body>
+</html>
