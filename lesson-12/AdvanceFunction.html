@@ -6,6 +6,8 @@
 		<title>Document</title>
 	</head>
 	<body>
+		<button onclick="" class="js-button">Click</button>
+
 		<script>
 			greeting() //🟨-Hoisting  Declaration before Initialization
 			function greeting() {
@@ -94,6 +96,25 @@
 			//🟨 Shortcut
 			const oneLine = () => 2 + 3
 			console.log(oneLine())
+
+			const object2 = {
+				method: () => {},
+				method() {},
+			}
+
+			//🟨-addEventListener
+			const buttonElement = document.querySelector(".js-button")
+
+			const eventListener = () => {
+				console.log("click")
+			}
+			buttonElement.addEventListener("click", eventListener)
+			buttonElement.addEventListener("click", () => {
+				console.log("click2")
+			})
+
+			//🟨-removeEventListener
+			buttonElement.removeEventListener("click", eventListener)
 		</script>
 	</body>
 </html>
