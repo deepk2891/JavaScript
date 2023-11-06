@@ -64,7 +64,7 @@
 			//🟩-Keep running the function every 3 seconds
 			console.log("next line2")
 
-			x = ["make dinner", "wash dishes", "watch youtube"].forEach(function (value, index) {
+			x = [("make dinner", "wash dishes", "watch youtube")].forEach((value, index) => {
 				if (value === "wash dishes") {
 					return
 				}
@@ -73,6 +73,27 @@
 			})
 
 			//🟨if we want to use break; then its better to use a regular for loop.
+
+			//🟨-Regular Functions
+			const regularFunction = function (param, param2) {
+				console.log("hello")
+			}
+
+			//🟨-Arrow Functions
+			const arrowFunction = (param, param2) => {
+				console.log("hello")
+				return 5
+			}
+			arrowFunction()
+
+			const oneParam = (param) => {
+				console.log(param + 1)
+			}
+			oneParam(2)
+
+			//🟨 Shortcut
+			const oneLine = () => 2 + 3
+			console.log(oneLine())
 		</script>
 	</body>
 </html>
