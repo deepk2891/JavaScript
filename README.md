@@ -23,6 +23,8 @@
 | lesson-10 | [HTML, CSS and JavaScript Together](./lesson-10/) |
 | lesson-11 |          [Arrays & Loops](./lesson-11/)           |
 | lesson-12 |        [Advanced Functions](./lesson-12/)         |
+| Projects  |              [Projects](./projects/)              |
+
 
 
 ---
