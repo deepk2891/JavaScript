@@ -1,0 +1,69 @@
+<!-- 
+    Lesson 2 : Numbers & Math
+    🟩Exercise - 12a  
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-2/README.md
+-->
+
+<script>
+	//🟩 2a: At a restaurant, you order 1 soup for $10, 3 burgers for $8 each, and 1 ice cream for $5. Calculate the cost of the order.
+	var costOfOrder = 10 + 3 * 8 + 5 // Result: 39
+	console.log("Cost of Order: " + costOfOrder)
+
+	//🟩 2b: You're at a restaurant with 2 friends (3 people in total) and make the same order as in Exercise 2a. Calculate how much each person pays.
+	var costPerPerson = costOfOrder / 3 // Result: 13
+	console.log("Cost Per Person: " + costPerPerson)
+
+	//🟩 2c: Calculate the total cost of a toaster ($18.50) and 2 shirts ($7.50 each).
+	var totalCost = 18.5 + 2 * 7.5 // Result: 33.5
+	console.log("Total Cost: " + totalCost)
+
+	//🟩 2d: Calculate a 10% tax of the total cost in Exercise 2c.
+	var tax10Percent = totalCost * 0.1 // Result: 3.35
+	console.log("10% Tax: " + tax10Percent)
+
+	//🟩 2e: Calculate a 20% tax for the total cost in Exercise 2c.
+	var tax20Percent = totalCost * 0.2 // Result: 6.7
+	console.log("20% Tax: " + tax20Percent)
+
+	//🟩 2f: Calculate the cost of the products (before shipping and taxes). Hint: Calculate in cents to avoid inaccuracies.
+	var costInCents = (1899 + 2095 + 799) / 100 // Result: 47.93
+	console.log("Cost in Cents: " + costInCents)
+
+	//🟩 2g: Calculate the Total before tax.
+	var totalBeforeTax = (costInCents + 499) / 100 // Result: 52.92
+	console.log("Total Before Tax: " + totalBeforeTax)
+
+	//🟩 2h: Calculate the 10% tax exactly. Hint: use Math.round()
+	var tax10PercentExact = Math.round(totalBeforeTax * 0.1) / 100 // Result: 5.29
+	console.log("10% Tax (Exact): " + tax10PercentExact)
+
+	//🟩 2i: Calculate the Order Total at the bottom.
+	var orderTotal = totalBeforeTax + tax10PercentExact // Result: 58.21
+	console.log("Order Total: " + orderTotal)
+
+	//🟩 2j: Let's always round a number down (2.8 => 2). Using Math.floor.
+	var roundedDown = Math.floor(2.8) // Result: 2
+	console.log("Rounded Down: " + roundedDown)
+
+	//🟩 2k: Let's always round a number up (2.2 => 3). Using Math.ceil.
+	var roundedUp = Math.ceil(2.2) // Result: 3
+	console.log("Rounded Up: " + roundedUp)
+
+	// Challenge Exercise: Convert temperatures from Celsius(◽C) to Fahrenheit(◽F).
+
+	//🟩 2l: The temperature is 25◽C, calculate the temperature in Fahrenheit.
+	var celsius = 25
+	var fahrenheit = (celsius * 9) / 5 + 32 // Result: 77
+	console.log("Temperature in Fahrenheit: " + fahrenheit)
+
+	//🟩 2m: The temperature is 86◽F, calculate the temperature in Celsius.
+	var fahrenheit2 = 86
+	var celsius2 = ((fahrenheit2 - 32) * 5) / 9 // Result: 30
+	console.log("Temperature in Celsius: " + celsius2)
+
+	//🟩 2n: The temperature is -5◽C, calculate the temperature in Fahrenheit.
+	var celsius3 = -5
+	var fahrenheit3 = (celsius3 * 9) / 5 + 32 // Result: 23
+	console.log("Temperature in Fahrenheit: " + fahrenheit3)
+</script>
