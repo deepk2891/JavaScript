@@ -1,0 +1,49 @@
+<!--
+    Lesson 2 : Strings
+    🟩Exercise  
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-3/README.md
+-->
+
+<script>
+	//🟩 3a. Create the text 'My name is:' as a string.
+	var myNameIs = "My name is:"
+	console.log(myNameIs)
+
+	//🟩 3b. Create your name as a string (for example: 'deep').
+	var name = "deep"
+	console.log(name)
+
+	//🟩 3c. Using concatenation, add 2 strings from Exercise-3a & 3b together to create the text: 'My name is deep'
+	var introText = myNameIs + " " + name
+	console.log(introText)
+
+	//🟩 3d. At a restaurant, you order 1 apple ($5) and 1 banana ($3). Using math, calculate the total cost, and using concatenation, create the text: 'Total cost: $__' (replace __ with the total you calculated).
+	var totalCostConcatenation = "Total cost: $" + (5 + 3)
+	console.log(totalCostConcatenation)
+
+	//🟩 3e. Do the same thing as Exercise-3d, but use a template string and interpolation.
+	var totalCostTemplateString = `Total cost: $${5 + 3}`
+	console.log(totalCostTemplateString)
+
+	//🟩 3f. Display the text from Exercise-3e in a popup using alert('...');
+	alert(`Total cost: $${5 + 3}`)
+
+	//🟩 3g. You order 1 coffee ($5.99) and 1 apple ($2.95). Using math, calculate the total cost, and using concatenation, create the text: 'Total cost: $__' (hint: calculate in cents to avoid inaccuracies).
+	var totalCostCentsConcatenation = "Total cost: $" + (599 + 295) / 100
+	console.log(totalCostCentsConcatenation)
+
+	//🟩 3h. Do the same thing as Exercise-3g, but use a template string and interpolation.
+	var totalCostCentsTemplateString = `Total cost: $${(599 + 295) / 100}`
+	console.log(totalCostCentsTemplateString)
+
+	//🟩 3i. Display the text from Exercise-3h in a popup.
+	alert(`Total cost: $${(599 + 295) / 100}`)
+
+	//🟩 3j. Using a multi-line string, create the text from Exercise-3h and add a line of text underneath: 'Thank you, come again!'. Display both lines in a popup.
+	var multiLineText = `
+Total cost: $${(599 + 295) / 100}
+Thank you, come again!
+`
+	alert(multiLineText)
+</script>

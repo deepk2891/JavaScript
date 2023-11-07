@@ -1,0 +1,75 @@
+<!-- in this lesson: -->
+<!-- ------------------- -->
+<!--
+
+    Lesson 3 :  Strings
+
+    1.  String = text
+    2.  Use strings and numbers together.
+    3.  3 ways to create strings.
+    4.  Escape characters \' \n
+    5.  Interpolation, multi-line strings
+
+-->
+
+<!--🟨 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Type this in console ~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+
+<script>
+	//  🟨Total 3 Ways to create a String
+	//  🟦1. 'hello'
+	//  🟦2. "hello"
+	//  🟦3. "I'm learning JavaScript"
+
+	//  🟨String = text     'in single quotes'
+
+	"hello"
+
+	alert("hello")
+
+	//  🟨String Concatenation (combine strings together) :
+
+	"Some" + "Text"
+
+	"Some" + "More" + "Text"
+
+	//  🟨String Type coercion (automatic type conversion) :
+
+	typeof 2 //    'number'
+
+	typeof "hello" //    'string'
+
+	"hello" + 3 // 'hello3'
+
+	"$" + (2095 + 799) / 100 //   $28.94
+
+	//  🟩Concatenation
+	"Items (" + (1 + 1) + " ): $" + (2095 + 799) / 100 //  Output : 'Items (2): $28.94'
+
+	alert("Items (" + (1 + 1) + "): $" + (2095 + 799) / 100)
+
+	//  🟨Type of Character :
+	//  🟦1. Letter (a,b,c)
+	//  🟦2. Number (1,2,3)
+	//  🟦3. Symbol (!,@,#)
+	//  🟦4. Escape Characters (\')(\")(\n)
+
+	// "I'\m learning javascript"
+
+	//  🟨\n = New Line
+	alert("some\ntext")
+
+	//  🟨3 Ways to create a string
+	//  🟦1. '...'  (Default)
+	//  🟦2. "..."
+	//  🟦3. `...`  (more feature like multiple line)
+	;`hello`
+
+	//  🟨Interpolation = insert value directly into a string - ${🟩}
+
+	//  `Items (${1+1})`;  =>   Items(2)
+	//  🟩`Items (${1+1}) : ${(2095 + 799) / 100}`
+
+	//  🟨Multi-Line String
+	;`some
+       text` //  =>  'some\ntext'
+</script>
