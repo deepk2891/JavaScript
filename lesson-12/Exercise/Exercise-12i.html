@@ -1,0 +1,82 @@
+<!-- 
+    Lesson 12 : Advance Functions
+    🟩Exercise - 12i
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-12/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 12i</title>
+	</head>
+	<body>
+		<!-- 1 -->
+		<!-- 
+
+		<button onclick="messages++">Add</button>
+		<button onclick="messages--">Remove</button>
+        
+		-->
+
+		<!-- 2 -->
+
+		<button onclick="messages++; displayNotification()">Add</button>
+		<button onclick="if(messages>0){messages--; if(messages===0){stopNotification()}}">Remove</button>
+
+		<script>
+			// 1
+			/*
+
+            let messages = 2
+
+			setInterval(() => {
+				if (document.title === "Exercise - 12h") {
+					if (messages === 0) {
+						document.title = "Exercise - 12h"
+					} else {
+						document.title = `(${messages}) New messagees`
+					}
+				} else {
+					document.title = "Exercise - 12h"
+				}
+			}, 1500) 
+
+            */
+
+			// 2
+
+			let messages = 2
+			let interval
+
+			let isDisplayingNotofication
+
+			displayNotification()
+
+			function displayNotification() {
+				if (isDisplayingNotofication) {
+					return
+				}
+
+				isDisplayingNotofication = true
+
+				intervalId = setInterval(function () {
+					if (document.title === "App") {
+						document.title = `(${messages}) New messages`
+					} else {
+						document.title = "App"
+					}
+				}, 1000)
+			}
+
+			function stopNotification() {
+				isDisplayingNotification = false
+
+				clearInterval(intervalId)
+				document.title = "App"
+			}
+		</script>
+	</body>
+</html>

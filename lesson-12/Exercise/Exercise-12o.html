@@ -1,0 +1,31 @@
+<!-- 
+    Lesson 12 : Advance Functions
+    🟩Exercise - 12o
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-12/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 12o</title>
+	</head>
+	<body>
+		<script>
+			function removeEgg(foods) {
+				let eggsRemoved = 0
+
+				return foods.filter((food) => {
+					if (food === "egg" && eggsRemoved < 2) {
+						eggsRemoved++
+						return false
+					}
+					return true
+				})
+			}
+			console.log(removeEgg(["egg", "apple", "egg", "egg", "egg", "banana"]))
+		</script>
+	</body>
+</html>

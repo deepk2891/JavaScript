@@ -1,0 +1,27 @@
+<!-- 
+    Lesson 12 : Advance Functions
+    🟩Exercise - 12q
+    🟩Question
+    🟩https://github.com/deepk2891/Javascript/blob/main/lesson-12/README.md
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exercise - 12q</title>
+	</head>
+	<body>
+		<button class="js-button">Start</button>
+		<script>
+			document.querySelector(".js-button").addEventListener("click", () => {
+				const button = document.querySelector(".js-button")
+
+				setTimeout(() => {
+					button.innerHTML = "Finished!"
+				}, 1000)
+			})
+		</script>
+	</body>
+</html>
