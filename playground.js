@@ -90,17 +90,10 @@ function sum (a,b) {
 }
 sum(1,2)
 
-function sum (a,b) {
-	// return
-	console.log(a + b)
-}
-sum(1,2)
-
 function calculateFoodTotal (food,tip) {
-	tipPercentage = tip / 100
-	tipAmount = food * tipPercentage
-	// total = food + tipAmount
-	total = sum(food,tipAmount)
+	const tipPercentage = tip / 100
+	const tipAmount = food * tipPercentage
+	const total = sum(food,tipAmount)
 
 	console.log("food amount",food)
 	console.log(`tip amount ${ tip }%`)
@@ -109,3 +102,69 @@ function calculateFoodTotal (food,tip) {
 	return total
 }
 console.log(calculateFoodTotal(100,20))
+
+console.log('--------------ES6--------------')
+// ES6
+// Arrow Functions =>
+// Arrow function with explicit return 
+const sumArrow = (a,b) => {
+	return a + b
+}
+
+// Arrow function with implicit return 
+// IMPORTANT : For implicit return, remove curly braces
+const sumArrow2 = (a,b) => a + b
+
+console.log(sumArrow2(10,50))
+
+
+console.log('--------------Arrays--------------')
+// Arrays
+const fruits = [ '🍌','🍎','🍊','🍐' ]
+
+console.log(fruits)
+console.log(fruits[ 0 ])
+console.log(fruits[ 1 ])
+console.log(fruits[ 2 ])
+console.log(fruits[ 3 ])
+
+fruits.push('🍪')
+console.log(fruits)
+
+fruits.push('🍇')
+console.log(fruits)
+
+
+// Array slice
+// start from 0 and upto 2 but not including 2 [0 , 1]
+console.log(fruits.slice(0,2))
+
+console.log(fruits.slice(3,6))
+
+console.log(fruits.slice(1,4))
+
+console.log(fruits.indexOf('🍐'))
+
+console.log(fruits.length)
+
+
+console.log('--------------Objects--------------')
+//Objects
+
+const person = {
+	name: 'deep',
+	shirt: 'white',
+}
+console.log(person)
+
+// access object: dot notation vs bracket notation
+console.log(person.name)
+
+// bracket notation
+console.log(person[ 'name' ])
+
+// asign object
+person.phone = '9874563215'
+console.log(person[ 'phone' ])
+
+console.log(person)
