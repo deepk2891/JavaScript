@@ -168,3 +168,68 @@ person.phone = '9874563215'
 console.log(person[ 'phone' ])
 
 console.log(person)
+
+const person2 = {
+	name: 'deep',
+	shirt: 'blue'
+}
+console.log(person2)
+console.log(person2.name)
+console.log(person2.shirt)
+
+const introducer = (name,shirt) => {
+	const person = {
+		name: name,
+		shirt: shirt,
+		assets: 100000,
+		liabilities: 50000,
+		networth: function () {
+			return this.assets - this.liabilities
+		}
+	}
+	const intro = `Hi, my name is ${ person.name } and the color of my shirt is ${ person.shirt } and my networth is ${ person.networth() }`
+	return intro
+}
+console.log(introducer('deep','blue'))
+console.log(introducer('peep','white'))
+
+
+let groceries = [ '🍌','🍎','🍊','🍐','🍉','🥑','🍇' ]
+console.log(groceries[ 0 ])
+console.log(groceries[ 1 ])
+console.log(groceries[ 2 ])
+console.log(groceries[ 3 ])
+
+for (let i = 0; i < groceries.length; i++)
+{
+	console.log(groceries[ i ])
+}
+
+for (const grocery of groceries)
+{
+	console.log(grocery)
+}
+
+const numbers = [ 1,2,3,4,5,6 ]
+// for (let i = 0; i < numbers.length; i++)
+// {
+// 	console.log(numbers[ i ])
+// }
+
+const double = (numbers) => {
+	let result = []
+	for (const number of numbers)
+	{
+		result.push(number * 2)
+		// result.push(number ** 2)  // Square
+	}
+	return result
+}
+console.log(double([ 1,2,3,4,5,6 ]))
+
+// [ 2,4,6,8,10,12 ]
+// for (const number of numbers)
+// {
+// 	result.push(number * 2)
+// }
+// console.log(result)
