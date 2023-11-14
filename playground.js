@@ -233,3 +233,62 @@ console.log(double([ 1,2,3,4,5,6 ]))
 // 	result.push(number * 2)
 // }
 // console.log(result)
+
+
+// 	const howManyLetters = () => {
+// 		const phrase = 'hey, can you go to grocery store with me?'
+// 		let result = 0
+// 		for (const index in phrase)
+// 		{
+// 			console.log(Number(index) + 1)
+// 			result = Number(index) + 1
+// 		}
+// 		return result
+// 	}
+// 	howManyLetters()
+
+
+// 	const howManyLetters = (phrase) => {
+// 		let result = 0;
+// 		for (const char of phrase)
+// 		{
+// 			// character is a letter or ! Not
+// 			if (/[a-zA-Z]/.test(char))
+// 			{
+// 				result += 1;
+// 			}
+// 		}
+// 		return result;
+// 	};
+// 	const phrase = 'This is called '
+// 	console.log(howManyLetters(phrase));
+
+
+const howManyLetters = (phrase) => {
+	let result = 0
+
+	// for (const index of phrase)
+	// {
+	// 	console.log(Number(index) + 1)
+	// 	result = Number(index) + 1
+	// }
+
+	// return { result: phrase.length }
+	return phrase.length
+}
+// const phrase = prompt("Enter phrase : ")
+const phrase = 'hello this is a sentence'
+console.log(`Phrase length : ${ howManyLetters(phrase) }`)
+
+
+const sumArray = (numbers) => {
+	let result = 0
+	for (const number of numbers)
+	{
+		console.log(number)
+		result += number
+	}
+	return { result }
+}
+const nums = [ 1,2,3,4 ]
+console.log(sumArray(nums))
