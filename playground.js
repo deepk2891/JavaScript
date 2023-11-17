@@ -292,3 +292,66 @@ const sumArray = (numbers) => {
 }
 const nums = [ 1,2,3,4 ]
 console.log(sumArray(nums))
+
+
+const max = (numbers) => {
+	let result = numbers[ 0 ]
+
+	for (const number of numbers)
+	{
+		if (number > result)
+		{
+			result = number
+		}
+	}
+	return { result }
+}
+console.log(max([ 1,3,5,74,3 ]))
+
+
+const letterFrequancy = (phrase) => {
+	// letterFrequancy('haha')👉{'h':2,'a':2}
+	console.log(phrase)
+	const frequancy = {}
+	for (const letter of phrase)
+	{
+		console.log(letter)
+		if (letter in frequancy)
+		{
+			frequancy[ letter ] += 1
+		} else
+		{
+			frequancy[ letter ] = 1
+		}
+	}
+	return frequancy
+}
+console.log(letterFrequancy('deep !'))
+
+
+const wordFrequancy = (phrase) => {
+	const frequancy = {}
+
+	words = phrase.split(' ')
+	for (const word of words)
+	{
+		if (word in frequancy)
+		{
+			frequancy[ word ]++
+		}
+		else
+		{
+			frequancy[ word ] = 1
+		}
+	}
+	return frequancy
+}
+console.log(wordFrequancy('lol what lol hello'))
+
+
+const wordFrequancy2 = (phrase) => {
+	const words = phrase.split(' ')
+	return letterFrequancy(words)
+}
+const userInput = 'hello lol hello'
+console.log(wordFrequancy2(userInput))
