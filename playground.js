@@ -355,3 +355,74 @@ const wordFrequancy2 = (phrase) => {
 }
 const userInput = 'hello lol hello'
 console.log(wordFrequancy2(userInput))
+
+
+// Higher order functions
+// Map : loops and returns an array
+// Filter : loops and returns an array with matching conditions
+// Reduce 
+
+
+//👉MAP
+
+const doubleMap = (number) => { return number.map(number => number * 2) }
+console.log(doubleMap([ 1,2,3,4 ]))
+
+let result = [ 1,2,3,4 ].map(num => num * 2)
+console.log(result)
+
+
+//👉FILTER 
+
+const filter = (numbers,greaterThan) => {
+	let result = []
+
+	for (const number of numbers)
+	{
+		if (number > greaterThan)
+		{
+			result.push(number)
+		}
+	}
+	return result
+}
+// console.log(numb.filter([ 1,2,3,4,5,6 ],2))
+const numb = [ 1,2,3,4,5,6 ]
+console.log(numb.filter(num => num > 4 || num < 2))
+
+
+// 	if ( userIsAuthenticated || userIsPayingMember ) {
+//  	show youtube videoes
+// 	} else {
+// 		ads
+// 	}
+
+
+const actors = [
+	{ name: 'jonny depp',netWorth: 20000 },
+	{ name: 'amber herd',netWorth: 10 },
+	{ name: 'mat demon',netWorth: 17000 },
+	{ name: 'brad pit',netWorth: 300000 },
+	{ name: 'leonardo wincy',netWorth: 1000 }
+]
+let actorHighNetWorth = actors.filter(actor => actor.netWorth > 10)
+console.log(actorHighNetWorth)
+
+let actorNames = actorHighNetWorth.map(actor => actor.name).join(', ')
+console.log(actorNames)
+
+// playground.innerHTML = `<h1>${ actorNames }</h1>`
+
+
+//👉REDUCE
+
+// sum of all  the net worths
+// SUM: Think reduce
+// REDUCE takes in a function as a argument
+
+digits = [ 1,2,3 ]
+const digitsResult = digits.reduce(function (a,b) {
+	return a + b
+})
+
+console.log(digitsResult)
