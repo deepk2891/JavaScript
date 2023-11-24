@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				height: 50dvh;
+				max-width: 1320px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			button {
+				padding: 10px 20px;
+				font-size: 20px;
+				text-transform: capitalize;
+				margin: 0 20px;
+			}
+			#sliderImage {
+				width: 200px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button id="prevButton">prev</button>
+			<div id="sliderImage"></div>
+			<button id="nextButton">next</button>
+		</div>
+
+		<script>
+			const images = [
+				"<img src='https://picsum.photos/id/42/200/300' alt='image1'>",
+				"<img src='https://picsum.photos/id/10/200/300' alt='image2'>",
+				"<img src='https://picsum.photos/id/12/200/300' alt='image3'>",
+			]
+
+			const sliderImage = document.querySelector("#sliderImage")
+			const prevButton = document.querySelector("#prevButton").addEventListener("click", prevImage)
+			const nextButton = document.querySelector("#nextButton").addEventListener("click", nextImage)
+
+			let currentIndex = 0
+
+			function showImage() {
+				sliderImage.innerHTML = images[currentIndex]
+			}
+			showImage(currentIndex)
+
+			function prevImage() {
+				currentIndex = (currentIndex - 1 + images.length) % images.length
+				showImage()
+			}
+
+			function nextImage() {
+				currentIndex = (currentIndex + 1) % images.length
+				showImage()
+			}
+		</script>
+	</body>
+</html>
