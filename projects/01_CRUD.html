@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CRUD JS</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" /> -->
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<div class="container-xl mx-auto">
+			<h1 class="text-2xl md:text-3xl lg:text-4xl text-center font-medium text-black py-8 bg-blue-200">CRUD Application-1 in <span class="text-indigo-600">JavaScript Course</span></h1>
+
+			<div class="flex flex-col md:flex-row py-5 text-lg">
+				<div class="text-center md:w-2/3 p-4">
+					<div>
+						<h2 class="text-indigo-600 font-medium text-2xl pb-5">User Detail</h2>
+						<label class="float-left" for="userName">Username :</label>
+						<input
+							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
+							type="text"
+							placeholder="Enter your name"
+							required
+							id="userName"
+						/>
+						<label class="float-left" for="userEmail">Email :</label>
+						<input
+							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
+							type="email"
+							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+							placeholder="Enter your email"
+							required
+							id="userEmail"
+						/>
+
+						<label class="float-left" for="userPassword">Password :</label>
+						<input
+							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
+							type="password"
+							placeholder="Enter your password"
+							required
+							id="userPassword"
+						/>
+						<button type="submit" class="block w-full border border-indigo-500 text-lg py-2 px-6 bg-indigo-600 text-white hover:bg-white hover:text-indigo-400" onclick="addUser()">
+							Add user
+						</button>
+					</div>
+				</div>
+				<div class="md:w-2/3 p-4">
+					<div class="text-center">
+						<h2 class="text-indigo-600 font-medium text-2xl pb-12">User Table</h2>
+						<table class="table-auto border border-gray-500 mx-auto w-full">
+							<thead>
+								<tr>
+									<th width="25%" class="border border-gray-500 px-4 py-2">UserName</th>
+									<th width="25%" class="border border-gray-500 px-4 py-2">Email</th>
+									<th width="25%" class="border border-gray-500 px-4 py-2">Password</th>
+									<th class="border border-gray-500 px-4 py-2">Actions</th>
+								</tr>
+							</thead>
+							<tbody class="js-user-list">
+								<!-- <tr>
+									<td class="border border-gray-500 px-4 py-2"></td>
+									<td class="border border-gray-500 px-4 py-2"></td>
+									<td class="border border-gray-500 px-4 py-2"></td>
+									<td class="border border-gray-500 px-4 py-2">
+										<button class="border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400">
+											<i class="fa-solid fa-pen-to-square"></i>
+										</button>
+										<button class="border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400">
+											<i class="fa-solid fa-trash"></i>
+										</button>
+									</td>
+								</tr> -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function addUser() {
+				const userName = document.getElementById("userName").value
+				const userEmail = document.getElementById("userEmail").value
+				const userPassword = document.getElementById("userPassword").value
+
+				const newRow = document.createElement("tr")
+
+				//👇 ----------------------------------------------------------------------------------------
+
+				//🟨without function
+				// const nameCell = document.createElement("td")
+				// const emailCell = document.createElement("td")
+				// const passwordCell = document.createElement("td")
+				// const actionCell = document.createElement("td")
+
+				//🟨function
+				const nameCell = createTableCell(userName, "border border-gray-500 px-4 py-2")
+				const emailCell = createTableCell(userEmail, "border border-gray-500 px-4 py-2")
+				const passwordCell = createTableCell(userPassword, "border border-gray-500 px-4 py-2")
+				const actionCell = createTableCell("", "border border-gray-500 px-4 py-2")
+
+				//👆 ----------------------------------------------------------------------------------------
+
+				nameCell.textContent = userName
+				emailCell.textContent = userEmail
+				passwordCell.textContent = userPassword
+
+				//👇 ----------------------------------------------------------------------------------------
+
+				//🟨without function
+				// const editButton = document.createElement("button")
+				// editButton.className = "border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400"
+				// editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>'
+				// editButton.onclick = editUser
+
+				// const deleteButton = document.createElement("button")
+				// deleteButton.className = "border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400"
+				// deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>'
+				// deleteButton.onclick = deleteUser
+
+				//🟨function
+				const editButton = createButton("fa-solid fa-pen-to-square", "border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400", editUser)
+
+				const deleteButton = createButton("fa-solid fa-trash", "border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400", deleteUser)
+
+				//👆 ----------------------------------------------------------------------------------------
+
+				actionCell.appendChild(editButton)
+				actionCell.appendChild(deleteButton)
+
+				newRow.appendChild(nameCell)
+				newRow.appendChild(emailCell)
+				newRow.appendChild(passwordCell)
+				newRow.appendChild(actionCell)
+
+				document.querySelector(".js-user-list").appendChild(newRow)
+			}
+
+			function createTableCell(content, className) {
+				const cell = document.createElement("td")
+				cell.textContent = content
+				cell.className = className
+				return cell
+			}
+
+			function createButton(iconClass, className, onclickHandler) {
+				const button = document.createElement("button")
+				button.innerHTML = `<i class="${iconClass}"></i>`
+				button.className = className
+				button.onclick = onclickHandler
+				return button
+			}
+
+			function editUser(userName, userEmail, userPassword) {
+				console.log("Edit user:", userName, userEmail, userPassword)
+				//pending
+			}
+
+			function deleteUser(userName, userEmail, userPassword) {
+				console.log("Delete user:", userName, userEmail, userPassword)
+				//pending
+			}
+		</script>
+	</body>
+</html>
