@@ -86,7 +86,22 @@
 				const userEmail = document.getElementById("userEmail").value
 				const userPassword = document.getElementById("userPassword").value
 
-				const newRow = document.createElement("tr")
+				// const newRow = document.createElement("tr")
+				const newRowHTML = `
+						<tr>
+							<td class="border border-gray-500 px-4 py-2">${userName}</td>
+							<td class="border border-gray-500 px-4 py-2">${userEmail}</td>
+							<td class="border border-gray-500 px-4 py-2">${userPassword}</td>
+							<td class="border border-gray-500 px-4 py-2">
+								<button class="border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400">
+									<i class="fa-solid fa-pen-to-square"></i>
+								</button>
+								<button class="border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400">
+									<i class="fa-solid fa-trash"></i>
+								</button>
+							</td>
+						</tr>
+					`
 
 				//👇 ----------------------------------------------------------------------------------------
 
@@ -97,16 +112,16 @@
 				// const actionCell = document.createElement("td")
 
 				//🟨function
-				const nameCell = createTableCell(userName, "border border-gray-500 px-4 py-2")
-				const emailCell = createTableCell(userEmail, "border border-gray-500 px-4 py-2")
-				const passwordCell = createTableCell(userPassword, "border border-gray-500 px-4 py-2")
-				const actionCell = createTableCell("", "border border-gray-500 px-4 py-2")
+				// const nameCell = createTableCell(userName, "border border-gray-500 px-4 py-2")
+				// const emailCell = createTableCell(userEmail, "border border-gray-500 px-4 py-2")
+				// const passwordCell = createTableCell(userPassword, "border border-gray-500 px-4 py-2")
+				// const actionCell = createTableCell("", "border border-gray-500 px-4 py-2")
 
 				//👆 ----------------------------------------------------------------------------------------
 
-				nameCell.textContent = userName
-				emailCell.textContent = userEmail
-				passwordCell.textContent = userPassword
+				// nameCell.textContent = userName
+				// emailCell.textContent = userEmail
+				// passwordCell.textContent = userPassword
 
 				//👇 ----------------------------------------------------------------------------------------
 
@@ -122,37 +137,38 @@
 				// deleteButton.onclick = deleteUser
 
 				//🟨function
-				const editButton = createButton("fa-solid fa-pen-to-square", "border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400", editUser)
+				// const editButton = createButton("fa-solid fa-pen-to-square", "border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400", editUser)
 
-				const deleteButton = createButton("fa-solid fa-trash", "border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400", deleteUser)
+				// const deleteButton = createButton("fa-solid fa-trash", "border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400", deleteUser)
 
 				//👆 ----------------------------------------------------------------------------------------
 
-				actionCell.appendChild(editButton)
-				actionCell.appendChild(deleteButton)
+				// actionCell.appendChild(editButton)
+				// actionCell.appendChild(deleteButton)
 
-				newRow.appendChild(nameCell)
-				newRow.appendChild(emailCell)
-				newRow.appendChild(passwordCell)
-				newRow.appendChild(actionCell)
+				// newRow.appendChild(nameCell)
+				// newRow.appendChild(emailCell)
+				// newRow.appendChild(passwordCell)
+				// newRow.appendChild(actionCell)
 
-				document.querySelector(".js-user-list").appendChild(newRow)
+				// document.querySelector(".js-user-list").appendChild(newRow)
+				document.querySelector(".js-user-list").insertAdjacentHTML("beforeend", newRowHTML)
 			}
 
-			function createTableCell(content, className) {
-				const cell = document.createElement("td")
-				cell.textContent = content
-				cell.className = className
-				return cell
-			}
+			// function createTableCell(content, className) {
+			// 	const cell = document.createElement("td")
+			// 	cell.textContent = content
+			// 	cell.className = className
+			// 	return cell
+			// }
 
-			function createButton(iconClass, className, onclickHandler) {
-				const button = document.createElement("button")
-				button.innerHTML = `<i class="${iconClass}"></i>`
-				button.className = className
-				button.onclick = onclickHandler
-				return button
-			}
+			// function createButton(iconClass, className, onclickHandler) {
+			// 	const button = document.createElement("button")
+			// 	button.innerHTML = `<i class="${iconClass}"></i>`
+			// 	button.className = className
+			// 	button.onclick = onclickHandler
+			// 	return button
+			// }
 
 			function editUser(userName, userEmail, userPassword) {
 				console.log("Edit user:", userName, userEmail, userPassword)
