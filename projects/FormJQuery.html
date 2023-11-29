@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="" id="form">
+			<input type="text" id="name" placeholder="Enter name" />
+			<span id="nameError"></span>
+			<br />
+			<input type="email" id="email" placeholder="Enter email" />
+			<span id="emailError"></span>
+			<br />
+			<button type="submit">Signup</button>
+		</form>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$("#form").on("submit", function (e) {
+				// e.preventDefault()
+				const name = $("#name").val()
+				const email = $("#email").val()
+
+				let nameError = (emailError = true)
+				if (name == "") {
+					printMessage("nameError", "Name is Required...")
+				} else {
+					printMessage("nameError", "")
+				}
+				if (email == "") {
+					printMessage("emailError", "Email is Required...")
+				} else {
+					printMessage("emailError", "")
+				}
+
+				if (nameError || emailError == true) {
+					return false
+				} else {
+					console.log(name, email)
+				}
+			})
+
+			function printMessage(el, msg) {
+				$("#" + el).html(msg)
+			}
+		</script>
+	</body>
+</html>
