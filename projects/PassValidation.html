@@ -40,36 +40,27 @@
 
 		<script>
 			function checkPasswordStrength() {
-				var password = document.getElementById("password").value
+				let password = document.getElementById("password").value
+				let isStrongPassword = password.length >= 8
+				let hasUpperCase = /[A-Z]/.test(password)
+				let hasDigit = /\d/.test(password)
 
-				var isStrongPassword = password.length >= 8
 				if (isStrongPassword) {
 					document.getElementById("passCheck1").innerHTML = '<i class="fa-solid fa-circle-check text-green-600 pe-3"></i>password should be minimum 8 characters (1234Abcd)'
-				} else {
-					document.getElementById("passCheck1").innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 pe-3"></i>password should be minimum 8 characters (1234Abcd)'
 				}
-
-				var hasUpperCase = /[A-Z]/.test(password)
 				if (hasUpperCase) {
 					document.getElementById("passCheck2").innerHTML = '<i class="fa-solid fa-circle-check text-green-600 pe-3"></i>password must contain minimum 1 Upper case character (ABCD)'
-				} else {
-					document.getElementById("passCheck2").innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 pe-3"></i>password must contain minimum 1 Upper case character (ABCD)'
 				}
-
-				var hasDigit = /\d/.test(password)
 				if (hasDigit) {
 					document.getElementById("passCheck3").innerHTML = '<i class="fa-solid fa-circle-check text-green-600 pe-3"></i>password must contain numbers (1-9)'
-				} else {
-					document.getElementById("passCheck3").innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 pe-3"></i>password must contain numbers (1-9)'
 				}
 			}
 
 			function checkPassword() {
-				var password = document.getElementById("password").value
-
-				var isStrongPassword = password.length >= 8
-				var hasUpperCase = /[A-Z]/.test(password)
-				var hasDigit = /\d/.test(password)
+				let password = document.getElementById("password").value
+				let isStrongPassword = password.length >= 8
+				let hasUpperCase = /[A-Z]/.test(password)
+				let hasDigit = /\d/.test(password)
 
 				if (isStrongPassword && hasUpperCase && hasDigit) {
 					document.getElementById("result").innerHTML = "Signup successfull ...!!!"
