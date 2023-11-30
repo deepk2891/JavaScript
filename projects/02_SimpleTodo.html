@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>To-Do List</h1>
+		<input type="text" placeholder="Enter todo" id="taskInput" />
+		<button onclick="addTask()">Add task</button>
+
+		<ul id="taskList"></ul>
+
+		<script>
+			const existingTasks = JSON.parse(localStorage.getItem("tasks")) || []
+
+			displayTasks()
+
+			function addTask() {
+				const taskText = document.querySelector("#taskInput").value.trim()
+
+				if (taskText !== "") {
+					const newTask = {
+						id: Date.now(),
+						text: taskText,
+					}
+					existingTasks.push(newTask)
+
+					localStorage.setItem("tasks", JSON.stringify(existingTasks))
+
+					displayTasks()
+
+					document.querySelector("#taskInput").value = ""
+				}
+			}
+
+			function displayTasks() {
+				const taskList = document.querySelector("#taskList")
+				taskList.style.padding = "0"
+				taskList.innerHTML = ""
+
+				existingTasks.forEach((task) => {
+					const taskListItem = document.createElement("li")
+					taskListItem.style.width = "280px"
+					taskListItem.style.overflowWrap = "break-word"
+
+					taskListItem.dataset.id = task.id
+					taskListItem.innerHTML += `
+						${task.text}
+						<button onclick="editTask(${task.id})">Edit</button>
+						<button onclick="deleteTask(${task.id})">Delete</button>
+					`
+
+					taskList.appendChild(taskListItem)
+				})
+			}
+
+			function editTask(taskId) {
+				const taskToEditIndex = existingTasks.findIndex((task) => task.id === taskId)
+
+				if (taskToEditIndex !== -1) {
+					const taskToEdit = existingTasks[taskToEditIndex]
+
+					document.querySelector("#taskInput").value = taskToEdit.text
+
+					existingTasks.splice(taskToEditIndex, 1)
+
+					localStorage.setItem("tasks", JSON.stringify(existingTasks))
+
+					displayTasks()
+				}
+			}
+
+			function deleteTask(taskId) {
+				const updatedTasks = existingTasks.filter((task) => task.id !== taskId)
+
+				localStorage.setItem("tasks", JSON.stringify(updatedTasks))
+
+				existingTasks.splice(0, existingTasks.length, ...updatedTasks)
+
+				displayTasks()
+			}
+		</script>
+	</body>
+</html>
