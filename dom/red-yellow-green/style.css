@@ -1,0 +1,11 @@
+* {
+    font-size: 1rem;
+}
+div {
+    display: flex;
+}
+button {
+    height: 100px;
+    width: 100px;
+    border: none;
+}
