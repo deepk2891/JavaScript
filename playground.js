@@ -426,3 +426,10 @@ const digitsResult = digits.reduce(function (a,b) {
 })
 
 console.log(digitsResult)
+
+let netWorthCalculator = actors.reduce(function (accumulator,actor) {
+	return accumulator + actor.netWorth
+},0)
+console.log(netWorthCalculator)
+
+console.log(actors.reduce((a,b) => a + b.netWorth,0))
