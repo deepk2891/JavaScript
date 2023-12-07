@@ -10,9 +10,6 @@
     👉 Higher order Function (Math.random())
 */
 
-// ** getComputerChoice randomly selects between `rock` `paper` `scissors` and returns that string **
-// getComputerChoice() 👉 'Rock'
-// getComputerChoice() 👉 'Scissors'
 function getComputerChoice () {
     let rpsChoices = [ 'Rock','Paper','Scissors' ]
     let computerChoice = rpsChoices[ Math.floor(Math.random() * 3) ]
@@ -29,23 +26,19 @@ function getResult (playerChoice,computerChoice) {
     else if (playerChoice === 'Rock' && computerChoice === 'Scissors')
     {
         score = 1
-
     }
     else if (playerChoice === "Paper" && computerChoice === "Rock")
     {
         score = 1
-
     }
     else if (playerChoice === "Scissors" && computerChoice === "Paper")
     {
         score = 1
-
     }
     else
     {
         score = -1
     }
-
     return score
 }
 
@@ -71,16 +64,31 @@ function showResult (score,playerChoice,computerChoice) {
 }
 
 function onClickRPS (playerChoice) {
-
+    const computerChoice = getComputerChoice()
+    const score = getResult(playerChoice.value,computerChoice)
+    showResult(score,playerChoice.value,computerChoice)
 }
 
 
 function playGame () {
+    let rpsButtons = document.querySelectorAll('.rpsButton')
 
+    rpsButtons.forEach(rpsButton => {
+        rpsButton.onclick = () => onClickRPS(rpsButton)
+    })
+
+    let endGameButton = document.getElementById('endGameButton')
+    endGameButton.onclick = () => endGame()
 }
 
 function endGame () {
+    let playerScore = document.getElementById('player-score')
+    let hands = document.getElementById('hands')
+    let result = document.getElementById('result')
 
+    playerScore.innerText = ''
+    hands.innerText = ''
+    result.innerText = ''
 }
 
 playGame()
