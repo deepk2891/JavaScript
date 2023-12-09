@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Constants</title>
+	</head>
+	<body>
+		<h1 id="myh1">Enter the radius of a circle :</h1>
+		<label for="">radius: </label>
+		<input type="text" id="mytext" />
+		<button id="mySubmit">submit</button>
+		<h3 id="myH3"></h3>
+
+		<script>
+			// const = a variable that can't be changed
+
+			const PI = 3.14
+			let radius
+			let circumference
+
+			document.getElementById("mySubmit").onclick = () => {
+				radius = document.getElementById("mytext").value
+				radius = Number(radius)
+				circumference = 2 * PI * radius
+				document.getElementById("myH3").textContent = circumference + "cm"
+			}
+		</script>
+	</body>
+</html>
