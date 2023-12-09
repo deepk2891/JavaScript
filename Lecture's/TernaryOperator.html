@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ternary Operator</title>
+	</head>
+	<body></body>
+</html>
+<script>
+	let age = 21
+	let message1 = age >= 18 ? "You'r an adult" : "Your a minor"
+	console.log(message1)
+
+	let time = 16
+	let greeting = time > 12 ? "Good Morning!" : "Good Afternoon!"
+	console.log(greeting)
+
+	let isStudent = true
+	let message2 = isStudent ? "You are a student" : "You are not a student"
+	console.log(message2)
+
+	let purchaseAmount = 125
+	let discount = purchaseAmount >= 100 ? 10 : 0
+	console.log(`Your total is $${purchaseAmount - purchaseAmount * (discount / 100)}`)
+</script>
