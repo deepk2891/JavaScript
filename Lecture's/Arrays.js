@@ -64,3 +64,22 @@ console.log(`sort() : ${ vehicles }`)
 //reverse() : reverse all elements of an array
 vehicles.reverse()
 console.log(`reverse() : ${ vehicles }`)
+
+let num1 = [ 2,3,4,5,6,7 ]
+
+let num2 = num1.map(value => value * 2)
+//  let num2 = num1.map(multiply)
+//  function multiply (value) {
+//      return value * 2
+//  }s
+console.log(num2)
+
+
+let num3 = num1.filter(value => value > 4)
+console.log(num3)
+
+let num4 = num1.reduce((a,b) => {
+	console.log(`${ a } ${ b }`)
+	return a + b
+})
+console.log(num4)
