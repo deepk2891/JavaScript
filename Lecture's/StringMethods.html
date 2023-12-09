@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body></body>
+</html>
+<script>
+	let userName = "Bro Code"
+	//              01234567 = 8
+
+	console.log(userName)
+
+	console.log(`length ${userName.length}`)
+
+	console.log(`charAt(2) : ${userName.charAt(2)}`)
+
+	console.log(`indexOf("o") : ${userName.indexOf("o")}`)
+
+	console.log(`trim(" ") : ${userName.trim(" ")}`)
+
+	console.log(`toUpperCase() : ${userName.toUpperCase()}`)
+
+	console.log(`toLowerCase() : ${userName.toLowerCase()}`)
+
+	console.log(`repeat(3) : ${userName.repeat(3)}`)
+
+	console.log(`startsWith(" ") : ${userName.startsWith(" ")}`)
+
+	console.log(`endsWith("e") : ${userName.endsWith("e")}`)
+
+	let phoneNumber = "123-456-7890"
+
+	phoneNumber = phoneNumber.replaceAll("-", "", "/")
+	console.log(phoneNumber)
+
+	phoneNumber = phoneNumber.padStart(15, "0")
+	console.log(phoneNumber)
+
+	phoneNumber = phoneNumber.padEnd(20, "0")
+	console.log(phoneNumber)
+
+	let result = userName.includes(" ")
+	if (result) {
+		console.log(`Your username can't include ' '`)
+	} else {
+		console.log(userName)
+	}
+</script>
