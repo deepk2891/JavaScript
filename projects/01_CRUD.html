@@ -127,9 +127,21 @@
 				}
 			}
 
-			const editUser = () => {}
+			const editUser = (button) => {
+				const rowToEdit = button.closest("tr")
+				const cells = rowToEdit.getElementsByTagName("td")
 
-			const updateRow = () => {}
+				const existingUserName = cells[0].innerHTML
+				const existingUserEmail = cells[1].innerHTML
+				const existingUserPassword = cells[2].innerHTML
+
+				document.getElementById("userName").value = existingUserName
+				document.getElementById("userEmail").value = existingUserEmail
+				document.getElementById("userPassword").value = existingUserPassword
+
+				// Delete the row
+				rowToEdit.remove()
+			}
 
 			const deleteUser = (button) => {
 				const confirmation = confirm("Are you sure you want to delete the user?")
