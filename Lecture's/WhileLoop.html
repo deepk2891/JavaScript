@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>While Loops</title>
+	</head>
+	<body></body>
+</html>
+<script>
+	let userName
+
+	//	if (userName === "") {
+	//		console.log("You didnt enter your name")
+	//	}
+	//	} else {
+	//		console.log(`Hello ${userName}`)
+
+	//	while (userName === "" || userName === null) {
+	//		userName = window.prompt(`Enter your name`)
+	//	}
+	//	console.log(`Hello ${userName}`)
+
+	//	do {
+	//		userName = window.prompt(`Enter your name`)
+	//	} while (userName === "" || userName === null)
+	//	console.log(`Hello ${userName}`)
+
+	let loggedIn = false
+	let password
+	while (!loggedIn) {
+		userName = window.prompt(`Enter your userName`)
+		password = window.prompt(`Enter your password`)
+
+		if (userName === "myUserName" && password === "myPassword") {
+			loggedIn = true
+			console.log("Login successfull")
+		} else {
+			console.log("invalid credentials!")
+		}
+	}
+</script>
