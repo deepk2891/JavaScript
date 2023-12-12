@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tempreture Conversion</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				background-color: hsl(0, 0%, 95%);
+			}
+			h1 {
+				color: hsl(239, 51%, 40%);
+			}
+			form {
+				background-color: hsl(0, 0%, 100%);
+				max-width: 350px;
+				text-align: center;
+				margin: auto;
+				padding: 25px;
+				border-radius: 10px;
+				box-sizing: 5px 5px 15px hsla(0, 0%, 0%, 0.3);
+			}
+			#textBox {
+				width: 50%;
+				text-align: center;
+				font-size: 2em;
+				border: 2px solid rgb(30, 79, 122);
+				border-radius: 4px;
+				margin-bottom: 15px;
+			}
+			label {
+				font-size: 1.5em;
+				font-weight: bold;
+			}
+			button {
+				margin-top: 15px;
+				background-color: hsl(0, 58%, 53%);
+				font-size: 1.5em;
+				border: none;
+				padding: 10px;
+				border-radius: 5px;
+				color: white;
+				cursor: pointer;
+			}
+			#result {
+				font-size: 1.75em;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<h1>Tempreture Conversion</h1>
+			<input type="number" id="textBox" value="0" />
+			<br />
+			<input type="radio" name="unit" id="toFahrenheit" />
+			<label for="toFahrenheit">Celsius ➡ Fahrenheit</label>
+			<br />
+			<input type="radio" name="unit" id="toCelsius" />
+			<label for="toCelsius">Fahrenheit ➡ Celsius</label>
+			<br />
+			<button type="button" onclick="convert()">Submit</button>
+			<p id="result"></p>
+		</form>
+	</body>
+</html>
+
+<script>
+	const textBox = document.getElementById("textBox")
+	const toFahrenheit = document.getElementById("toFahrenheit")
+	const toCelsius = document.getElementById("toCelsius")
+	const result = document.getElementById("result")
+
+	let temp
+
+	const convert = () => {
+		if (toFahrenheit.checked) {
+			temp = Number(textBox.value)
+			temp = (temp * 9) / 5 + 32
+			result.textContent = temp.toFixed(1) + "°F"
+			// ° w => alt + 0176 m => op + shift + 8
+		} else if (toCelsius.checked) {
+			temp = Number(textBox.value)
+			temp = temp - (32 * 5) / 9
+			result.textContent = temp.toFixed(1) + "°C"
+		} else {
+			result.textContent = "Select a unit"
+		}
+	}
+</script>
