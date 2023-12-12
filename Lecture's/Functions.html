@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Functions</title>
+	</head>
+	<body></body>
+</html>
+
+<script>
+	// 🟨Function = A section of reusable code.
+	// 			  Declare code once, use it  whenever you want
+	//            Call the function to execute that code.
+
+	//Parameters
+	function happBirthday(username, age) {
+		console.log("Happy Birthday to you!")
+		console.log("Happy Birthday brother!")
+		console.log(`Happy Birthday dear ${username}!`)
+		console.log(`you are ${age} years old`)
+	}
+	//Arguments
+	happBirthday("deep", 20)
+
+	function add(a, b) {
+		let result = a + b
+		return result
+		// return a + b
+	}
+	let answer = add(2, 3)
+	console.log(answer)
+	console.log(add(5, 2))
+
+	function subtract(a, b) {
+		return a - b
+	}
+	function mutiply(a, b) {
+		return a * b
+	}
+	function devide(a, b) {
+		return a / b
+	}
+
+	function isEven(number) {
+		// if (number % 2 === 0) {
+		// 	return true
+		// } else {
+		// 	return false
+		// }
+
+		return number % 2 === 0 ? "true" : "false"
+	}
+	console.log(isEven(10))
+
+	function isValidEmail(email) {
+		// if (email.includes("@")) {
+		// 	return true
+		// } else {
+		// 	false
+		// }
+
+		return email.includes("@") ? "true" : "false"
+	}
+	console.log(isValidEmail("name@"))
+</script>
