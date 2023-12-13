@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Spread Operator</title>
+	</head>
+	<body></body>
+</html>
+
+<script>
+	// spread operator = ... allows an iterable such as an array or string to be expanded into seperate elements ( unpacks the element )
+
+	let numbers = [1, 2, 3, 4, 5]
+
+	let maximum = Math.max(...numbers)
+	let minimum = Math.min(...numbers)
+
+	console.log(maximum)
+	console.log(minimum)
+
+	let username = "DeepKothari"
+	let lettrs = [...username].join("-")
+	console.log(lettrs)
+
+	let fruits = ["🍎", "🍌", "🍇"]
+	console.log(fruits)
+
+	let vegetables = ["🥕", "🥔", "🥒"]
+
+	let foods = [...fruits, ...vegetables, "🥛", "🍰"]
+	console.log(foods)
+</script>
