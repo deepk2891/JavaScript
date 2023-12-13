@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>REST PARAMETERS</title>
+	</head>
+	<body></body>
+</html>
+
+<script>
+	// rest parameters = (...rest) allows a function to work with a variable number of arguments by building them an array
+	//                  spread = expands an array into seperate elemenst
+	//                  rest = bundles sepereate elemenst into an array
+
+	function openFridge(...foods) {
+		console.log(foods)
+	}
+
+	const food1 = "banana"
+	const food2 = "oats"
+	const food3 = "dates"
+	const food4 = "peanutes"
+	const food5 = "milk"
+
+	// openFridge(food1, food2, food3, food4, food5)
+
+	function getFood(...foods) {
+		return foods
+	}
+	const foods = getFood(food1, food2, food3, food4, food5)
+	console.log(foods)
+
+	function sum(...numbers) {
+		let result = 0
+
+		for (let number of numbers) {
+			result += number
+		}
+		return result
+	}
+	const total = sum(1, 2, 2, 3)
+	console.log(total)
+
+	function getAverage(...numbers) {
+		let result = 0
+
+		for (let number of numbers) {
+			result += number
+		}
+		return result / numbers.length
+	}
+	console.log(getAverage(100, 25, 58))
+
+	function combineString(...strings) {
+		return strings.join(" ")
+	}
+	let fullName = combineString("Mr.", "Deep", "Kothari")
+	console.log(fullName)
+</script>
