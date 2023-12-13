@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body></body>
+</html>
+
+<script>
+	// 2D Array = multi dimentional array that stores matrix of data in rows and columns.
+	// useful for games, spreadsheet, or representing images
+
+	const matrix = [
+		[1, 2, 3],
+		[4, 5, 6],
+		[7, 8, 9],
+		["*", 0, "#"],
+	]
+
+	for (let row of matrix) {
+		const rowString = row.join(" ")
+		console.log(rowString)
+	}
+
+	console.log("-------------")
+
+	const game = [[], [], []]
+
+	game[0][0] = "x"
+	game[0][1] = "o"
+	game[0][2] = "x"
+
+	game[1][0] = "o"
+	game[1][1] = "x"
+	game[1][2] = "o"
+
+	game[2][0] = "x"
+	game[2][1] = "o"
+	game[2][2] = "x"
+
+	for (let row of game) {
+		const rowString = row.join(" ")
+		console.log(rowString)
+	}
+</script>
