@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"name": "P1 PRODUCT",
+		"price": 300,
+		"image": "./images/1.png"
+	},
+	{
+		"id": 2,
+		"name": "P2 PRODUCT",
+		"price": 300,
+		"image": "./images/2.png"
+	},
+	{
+		"id": 3,
+		"name": "P3 PRODUCT",
+		"price": 300,
+		"image": "./images/3.png"
+	},
+	{
+		"id": 4,
+		"name": "P4 PRODUCT",
+		"price": 300,
+		"image": "./images/4.png"
+	}
+]
