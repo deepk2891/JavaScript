@@ -10,7 +10,10 @@ closeCart.addEventListener('click',() => {
 })
 
 let listProductHTML = document.querySelector(".listProduct")
+let listCartHTML = document.querySelector('.listCart')
+let iconCartSpan = document.querySelector(".icon-cart span");
 let listProducts = []
+let carts = []
 
 const addDataToHTML = () => {
     listProductHTML.innerHTML = ''
@@ -39,9 +42,34 @@ listProductHTML.addEventListener('click',(event) => {
     if (positionClick.classList.contains("addCart"))
     {
         let product_id = positionClick.parentElement.dataset.id
-        alert(product_id)
+        addToCart(product_id)
     }
 })
+
+const addToCart = (product_id) => {
+    let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id)
+    if (carts.length <= 0)
+    {
+        carts = [ {
+            product_id: product_id,
+            quantity: 1
+        }
+        ]
+    }
+    else if (positionThisProductInCart < 0)
+    {
+        carts.push({
+            product_id: product_id,
+            quantity: 1
+        })
+    }
+    else
+    {
+        carts[ positionThisProductInCart ].quantity += 1
+
+    }
+    console.log(carts)
+}
 
 const initApp = () => {
     fetch("products.json")
