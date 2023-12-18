@@ -79,13 +79,14 @@ const addCartToHTML = () => {
     if (carts.length > 0)
     {
         carts.forEach((cart) => {
-            let newCart = document.createElement("div")
-            newCart.classList.add("item")
+            let newItem = document.createElement("div")
+            newItem.classList.add("item")
 
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id)
             let info = listProducts[ positionProduct ]
+            newItem.dataset.id = cart.product_id;
 
-            newCart.innerHTML = `
+            newItem.innerHTML = `
                 <div class="image">
                     <img src="${ info.image }" alt="${ info.name }" />
                 </div>
@@ -97,10 +98,49 @@ const addCartToHTML = () => {
                     <span class="plus">+</span>
                 </div>
             `
-            listCartHTML.appendChild(newCart)
+            listCartHTML.appendChild(newItem)
         })
     }
     iconCartSpan.innerText = carts.length;
+}
+
+listCartHTML.addEventListener('click',(event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains('minus') || positionClick.classList.contains('plus'))
+    {
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus';
+        if (positionClick.classList.contains('plus'))
+        {
+            type = 'plus';
+        }
+        changeQuantityCart(product_id,type);
+    }
+});
+
+const changeQuantityCart = (product_id,type) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+    if (positionItemInCart >= 0)
+    {
+        let info = carts[ positionItemInCart ];
+        switch (type)
+        {
+            case 'plus':
+                carts[ positionItemInCart ].quantity = carts[ positionItemInCart ].quantity + 1;
+                break;
+            default:
+                let changeQuantity = carts[ positionItemInCart ].quantity - 1;
+                if (changeQuantity > 0)
+                {
+                    carts[ positionItemInCart ].quantity = changeQuantity;
+                } else
+                {
+                    carts.splice(positionItemInCart,1);
+                }
+                break;
+        }
+    }
+    addCartToHTML();
 }
 
 const initApp = () => {
