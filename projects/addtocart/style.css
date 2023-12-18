@@ -40,7 +40,6 @@ header {
 }
 .listProduct .item img {
     width: 90%;
-    filter: drop-shadow(0 50px 20px #0009);
 }
 .listProduct {
     display: grid;
@@ -48,25 +47,26 @@ header {
     gap: 20px;
 }
 .listProduct .item {
-    background-color: #EEEEE6;
+    background-color: #e5e5e5;
     padding: 20px;
     border-radius: 20px;
+    filter: drop-shadow(0 5px 20px #0009);
 }
 .listProduct .item h2 {
     font-weight: 500;
     font-size: large;
 }
 .listProduct .item .price {
-    letter-spacing: 7px;
-    font-size: small;
+    letter-spacing: 2px;
+    font-size: large;
 }
 .listProduct .item button {
     background-color: #353432;
     color: #eee;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
     margin-top: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 /* cart */
