@@ -69,6 +69,38 @@ const addToCart = (product_id) => {
 
     }
     console.log(carts)
+
+    addCartToHTML()
+}
+
+const addCartToHTML = () => {
+    listCartHTML.innerHTML = ''
+
+    if (carts.length > 0)
+    {
+        carts.forEach((cart) => {
+            let newCart = document.createElement("div")
+            newCart.classList.add("item")
+
+            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id)
+            let info = listProducts[ positionProduct ]
+
+            newCart.innerHTML = `
+                <div class="image">
+                    <img src="${ info.image }" alt="${ info.name }" />
+                </div>
+                <div class="name">${ info.name }</div>
+                <div>₹${ info.price * cart.quantity }</div>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>${ cart.quantity }</span>
+                    <span class="plus">+</span>
+                </div>
+            `
+            listCartHTML.appendChild(newCart)
+        })
+    }
+    iconCartSpan.innerText = carts.length;
 }
 
 const initApp = () => {
@@ -78,6 +110,7 @@ const initApp = () => {
             listProducts = data
             console.log(listProducts)
             addDataToHTML()
+            addCartToHTML()
         })
 }
 initApp()
