@@ -1,6 +1,6 @@
 // https://superheroapi.com/api/access-token/character-id/
 
-const SUPERHERO_TOKEN = '122108651366147515'
+const SUPERHERO_TOKEN = '10223569763528853'
 const BASE_URL = `https://superheroapi.com/api.php/${ SUPERHERO_TOKEN }`
 
 const newHeroButton = document.getElementById("newHeroButton")
