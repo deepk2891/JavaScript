@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			var x = 0
+		</script>
+		<script>
+			//  You order 🍅 tomato soup
+			//  Meanwhile you continue your convo with a friend
+			//  RESOLVED - 🍲 your server brings you soup
+			//  REJECTED - ❌ No soup today.
+
+			//  setTimeout(() => {
+			//  	console.log("soup")
+			//  }, 2000)
+
+			const orderSooup = () => console.log("soup")
+
+			console.log("You start the convo with your friend 👳‍♂️!")
+			setTimeout(orderSooup, 2000)
+			console.log("Still speaking")
+
+			const promise1 = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					isReady = [true, false][Math.floor(Math.random() * 2)]
+					isReady ? resolve("✅soup is ready 🍲") : reject("❌No soup today 🍲")
+				}, 3000)
+			})
+
+			//	promise1.then((message) => console.log(message)).catch((error) => console.error(error))
+			console.log(promise1.then((success) => console.log({ success })).catch((error) => console.log({ error })))
+		</script>
+	</body>
+</html>
