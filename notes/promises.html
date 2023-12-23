@@ -35,6 +35,81 @@
 
 			//	promise1.then((message) => console.log(message)).catch((error) => console.error(error))
 			console.log(promise1.then((success) => console.log({ success })).catch((error) => console.log({ error })))
+
+			//	In the getSoup function, the async keyword is used to declare it as an asynchronous function.
+			// 	Inside the function, await is used to pause execution until the promise promise1 is resolved or rejected.
+			//  This makes the asynchronous code look more synchronous and easier to read.
+
+			// 	The try and catch blocks are used to handle the success and error cases.
+			//  If the promise is resolved, the success message is logged; if it is rejected, the error is caught and logged.
+
+			//	In summary, the async/await syntax is used to handle promises in a more synchronous and readable manner,
+			// 	making the asynchronous code flow look similar to synchronous code. It simplifies the handling of promises and improves code readability.
+
+			//  RESOLVED - if waiter brings you soup
+			//  tip the waiter
+			//  you pay for soup
+			//  REJECTED - leave a bad review, no tip
+
+			const getSoup = async () => {
+				const data = {
+					rating: 0,
+					tip: 0,
+					pay: 0,
+					review: 0,
+				}
+
+				try {
+					const soup = await promise1
+					console.log(soup)
+					data.rating = 5
+					data.tip = 0.2
+					data.pay = 10
+					data.review = 5
+					return data
+				} catch (error) {
+					console.log(error)
+					data.rating = 1
+					data.tip = 0
+					data.pay = 0
+					data.review = 1
+					return data
+				}
+			}
+			// console.log(getSoup())
+			getSoup().then((value) => console.log(value))
+
+			const sum = async (a, b) => a + b
+			console.log(sum(1, 2).then((value) => console.log(value)))
+
+			//  const getSoup = async () => {
+			//  	try {
+			//  		const soup = await promise1
+			//  		console.log(soup)
+			//  	} catch {
+			//  		console.log(error)
+			//  	}
+			//  }
+
+			//  console.log(
+			//  	"fetch",
+			//  	fetch("https://dog.ceo/api/breeds/image/random")
+			//  		.then((response) => response.json())
+			//  		.then((data) => console.log(data))
+			//  )
+
+			//  Rules of using async / await
+			//  1. you must create a function
+			//  2. you must use the keyword async
+			//  3. use the word
+
+			const getDog = async () => {
+				const url = "https://dog.ceo/api/breeds/image/random"
+				const response = await fetch(url)
+				const data = await response.json
+				console.log(data)
+			}
+			getDog()
 		</script>
 	</body>
 </html>
