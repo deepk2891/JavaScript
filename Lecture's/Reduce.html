@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>.Reduce()</title>
+	</head>
+	<body></body>
+</html>
+
+<script>
+	// .reduce() = reduce the elemenst of an array to a single value
+
+	const prices = [5, 15, 20, 25, 25, 30, 36]
+
+	const total = prices.reduce(sum)
+
+	console.log(`$${total.toFixed(2)}`)
+
+	function sum(previous, next) {
+		return previous + next
+	}
+
+	const grades = [56, 76, 98, 76, 58, 94, 82]
+
+	const maximum = grades.reduce(getMax)
+	const minimum = grades.reduce(getMin)
+
+	console.log(maximum)
+	console.log(minimum)
+
+	function getMax(accumulator, element) {
+		return Math.max(accumulator, element)
+	}
+	function getMin(accumulator, element) {
+		return Math.min(accumulator, element)
+	}
+</script>
