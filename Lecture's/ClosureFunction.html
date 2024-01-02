@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Closure Examples</title>
+	</head>
+	<body>
+		<button id="clickMeButton">Click Me</button>
+
+		<script>
+			// Example 1: Counter using a closure
+			function createCounter() {
+				let count = 0
+
+				function increment() {
+					count++
+					console.log(count)
+				}
+
+				return increment
+			}
+
+			const counter = createCounter()
+			counter() // Output: 1
+			counter() // Output: 2
+			counter() // Output: 3
+
+			// Example 2: Private variables using a closure
+			function createPerson(name, age) {
+				// private variables
+				let _name = name
+				let _age = age
+
+				// public methods
+				function getDetails() {
+					return `${_name}, ${_age} years old`
+				}
+
+				return {
+					getDetails,
+				}
+			}
+
+			const person = createPerson("John", 30)
+			console.log(person.getDetails()) // Output: John, 30 years old
+
+			// Example 3: Event handling with closures
+			function addEventHandlers() {
+				let count = 0
+
+				document.getElementById("clickMeButton").addEventListener("click", function () {
+					count++
+					console.log(`Button clicked ${count} times.`)
+				})
+			}
+
+			addEventHandlers()
+		</script>
+	</body>
+</html>
