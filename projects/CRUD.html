@@ -13,10 +13,9 @@
 			<h1 class="text-2xl md:text-3xl lg:text-4xl text-center font-medium text-black py-8 bg-blue-200">CRUD Application in <span class="text-indigo-600">JavaScript</span></h1>
 
 			<div class="flex flex-col xl:flex-row py-5 text-lg">
-				<div class="text-center xl:w-2/3 p-4">
+				<div class="text-center xl:w-2/5 p-4">
 					<div>
 						<h2 class="text-indigo-600 font-medium text-2xl pb-5">User Detail</h2>
-						<label class="float-left" for="userName">Username :</label>
 						<input
 							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
 							type="text"
@@ -24,7 +23,6 @@
 							required
 							id="userName"
 						/>
-						<label class="float-left" for="userEmail">Email :</label>
 						<input
 							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
 							type="email"
@@ -33,8 +31,6 @@
 							required
 							id="userEmail"
 						/>
-
-						<label class="float-left" for="userPassword">Password :</label>
 						<input
 							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
 							type="password"
@@ -42,22 +38,53 @@
 							required
 							id="userPassword"
 						/>
+						<div class="flex items-center mb-4">
+							<label for="gender" class="mr-4">Gender : </label>
+							<input type="radio" id="male" name="gender" value="Male" class="mr-1" />
+							<label for="male">Male</label>
+							<input type="radio" id="female" name="gender" value="Female" class="ml-4 mr-1" />
+							<label for="female">Female</label>
+						</div>
+						<div class="mb-4">
+							<div class="flex items-center">
+								<label for="hobbies" class="mr-4">Hobbies : </label>
+								<input type="checkbox" id="driving" name="hobbies" value="Driving" class="mr-1" />
+								<label for="driving" class="mr-4">Driving</label>
+								<input type="checkbox" id="cycling" name="hobbies" value="Cycling" class="mr-1" />
+								<label for="cycling" class="mr-4">Cycling</label>
+								<input type="checkbox" id="coding" name="hobbies" value="Coding" class="mr-1" />
+								<label for="coding">Coding</label>
+							</div>
+						</div>
+						<div class="mb-4">
+							<select name="course" id="course" class="block w-full p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none">
+								<option value="" disabled selected>Select a course</option>
+								<option value="full-stack">Full Stack</option>
+								<option value="android">Android</option>
+								<option value="animation">Animation</option>
+								<option value="figma">Figma</option>
+							</select>
+						</div>
 						<p id="InputIsEmptyMessage" class="text-left text-red-600 text-xl"></p>
 						<button type="submit" class="block w-full border border-indigo-500 text-lg py-2 px-6 bg-indigo-600 text-white hover:bg-white hover:text-indigo-400" onclick="addUser()">
 							Add user
 						</button>
 					</div>
 				</div>
-				<div class="xl:w-2/3 p-4">
+
+				<div class="xl:w-3/5 p-4">
 					<div class="text-center">
-						<h2 class="text-indigo-600 font-medium text-2xl pb-12">User Table</h2>
+						<h2 class="text-indigo-600 font-medium text-2xl pb-5">User Table</h2>
 						<table class="table-auto border border-gray-500 mx-auto w-full">
 							<thead>
 								<tr>
-									<th width="25%" class="border border-gray-500 px-4 py-2">UserName</th>
-									<th width="25%" class="border border-gray-500 px-4 py-2">Email</th>
-									<th width="25%" class="border border-gray-500 px-4 py-2">Password</th>
-									<th class="border border-gray-500 px-4 py-2">Actions</th>
+									<th class="border border-gray-500 px-2 py-2">UserName</th>
+									<th class="border border-gray-500 px-2 py-2">Email</th>
+									<th class="border border-gray-500 px-2 py-2">Password</th>
+									<th class="border border-gray-500 px-2 py-2">Gender</th>
+									<th class="border border-gray-500 px-2 py-2">Hobbies</th>
+									<th class="border border-gray-500 px-2 py-2">course</th>
+									<th class="border border-gray-500 px-2 py-2">Actions</th>
 								</tr>
 							</thead>
 							<tbody class="js-user-list">
@@ -91,12 +118,23 @@
 				const userEmail = userEmailInput.value
 				const userPassword = userPasswordInput.value
 
+				const genderInput = document.querySelector('input[name="gender"]:checked')
+				const gender = genderInput ? genderInput.value : ""
+				const hobbiesInputs = document.querySelectorAll('input[name="hobbies"]:checked')
+				const hobbies = Array.from(hobbiesInputs)
+					.map((hobby) => hobby.value)
+					.join(", ")
+				const course = document.getElementById("course").value
+
 				const newRowHTML = `
 					<tr>
-						<td class="border border-gray-500 px-4 py-2">${userName}</td>
-						<td class="border border-gray-500 px-4 py-2">${userEmail}</td>
-						<td class="border border-gray-500 px-4 py-2">${userPassword}</td>
-						<td class="border border-gray-500 px-4 py-2">
+						<td class="border border-gray-500 px-2 py-2">${userName}</td>
+						<td class="border border-gray-500 px-2 py-2">${userEmail}</td>
+						<td class="border border-gray-500 px-2 py-2">${userPassword}</td>
+						<td class="border border-gray-500 px-2 py-2">${gender}</td>
+						<td class="border border-gray-500 px-2 py-2">${hobbies}</td>
+						<td class="border border-gray-500 px-2 py-2">${course}</td>
+						<td class="border border-gray-500 px-2 py-2">
 							<button class="border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400" onclick="editUser(this)">
 								<i class="fa-solid fa-pen-to-square"></i>
 							</button>
@@ -108,14 +146,8 @@
 				`
 
 				const InputIsEmptyMessage = document.getElementById("InputIsEmptyMessage")
-				if (userName == "" && userEmail == "" && userPassword == "") {
+				if (userName === "" || userEmail === "" || userPassword === "" || gender === "" || hobbies === "" || course === "") {
 					InputIsEmptyMessage.innerHTML = `Please enter all user information`
-				} else if (userName == "") {
-					InputIsEmptyMessage.innerHTML = `Please enter user name`
-				} else if (userEmail == "") {
-					InputIsEmptyMessage.innerHTML = `Please enter user email`
-				} else if (userPassword == "") {
-					InputIsEmptyMessage.innerHTML = `Please enter user password`
 				} else {
 					InputIsEmptyMessage.innerHTML = ``
 
@@ -124,6 +156,9 @@
 					userNameInput.value = ""
 					userEmailInput.value = ""
 					userPasswordInput.value = ""
+					genderInput.checked = false
+					hobbiesInputs.forEach((hobby) => (hobby.checked = false))
+					document.getElementById("course").value = ""
 				}
 			}
 
@@ -134,26 +169,33 @@
 				const existingUserName = cells[0].innerHTML
 				const existingUserEmail = cells[1].innerHTML
 				const existingUserPassword = cells[2].innerHTML
+				const existingUserGender = cells[3].innerHTML
+				const existingUserHobbies = cells[4].innerHTML
+				const existingUserCourse = cells[5].innerHTML
 
 				document.getElementById("userName").value = existingUserName
 				document.getElementById("userEmail").value = existingUserEmail
 				document.getElementById("userPassword").value = existingUserPassword
 
-				// Delete the row
+				const genderInputs = document.getElementsByName("gender")
+				genderInputs.forEach((input) => {
+					input.checked = input.value === existingUserGender
+				})
+
+				const hobbiesInputs = document.getElementsByName("hobbies")
+				const existingHobbies = existingUserHobbies.split(", ")
+				hobbiesInputs.forEach((input) => {
+					input.checked = existingHobbies.includes(input.value)
+				})
+
+				document.getElementById("course").value = existingUserCourse
+
 				rowToEdit.remove()
 			}
 
 			const deleteUser = (button) => {
-				const confirmation = confirm("Are you sure you want to delete the user?")
-				const row = button.closest("tr")
-				row.style.color = "red"
-				if (confirmation) {
-					const rowDelete = button.closest("tr")
-					rowDelete.remove()
-				}
-
-				// const rowDelete = button.closest("tr")
-				// rowDelete.remove()
+				const rowDelete = button.closest("tr")
+				rowDelete.remove()
 			}
 		</script>
 	</body>
