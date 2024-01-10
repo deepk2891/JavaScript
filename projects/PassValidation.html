@@ -45,6 +45,10 @@
 				let hasUpperCase = /[A-Z]/.test(password)
 				let hasDigit = /\d/.test(password)
 
+				document.getElementById("passCheck1").innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 pe-3"></i>password should be minimum 8 characters (1234Abcd)'
+				document.getElementById("passCheck2").innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 pe-3"></i>password must contain minimum 1 Upper case character (ABCD)'
+				document.getElementById("passCheck3").innerHTML = '<i class="fa-solid fa-circle-xmark text-red-600 pe-3"></i>password must contain numbers (1-9)'
+
 				if (isStrongPassword) {
 					document.getElementById("passCheck1").innerHTML = '<i class="fa-solid fa-circle-check text-green-600 pe-3"></i>password should be minimum 8 characters (1234Abcd)'
 				}
