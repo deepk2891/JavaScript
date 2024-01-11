@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body></body>
+</html>
+<script>
+	//  sort()  =   mehtois used to sort elements of an array in place
+	//              Sorts elements as string in lexicographic order, not alphabetical
+	//              lexicographic = (alphabet + numbers + symbols) as strings
+
+	let arr = ["apple", "orange", "banana", "pineapple"]
+	arr.sort()
+	console.log(arr)
+
+	let numbers = [1, 10, 5, 25, 85, 49, 99, 665, 458]
+
+	numbers.sort((a, b) => a - b)
+	console.log(numbers)
+
+	numbers.sort((a, b) => b - a)
+	console.log(numbers)
+
+	const people = [
+		{ name: "Deep", age: 20, gpa: 3.0 },
+		{ name: "sandy", age: 26, gpa: 1.0 },
+		{ name: "jay", age: 32, gpa: 2.5 },
+		{ name: "dhruv", age: 24, gpa: 4.0 },
+	]
+
+	people.sort((a, b) => a.name - b.name)
+	console.log(people)
+
+	people.sort((a, b) => a.age - b.age)
+	console.log(people)
+
+	people.sort((a, b) => a.gpa - b.gpa)
+	console.log(people)
+
+	people.sort((a, b) => b.name.localeCompare(a.name))
+	console.log(people)
+</script>
