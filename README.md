@@ -1,6 +1,6 @@
 <h1 align="center">JavaScript Course</h1>
 
-[Live Demo](./index.html/)
+### 🔗<a href="https://deepk2891.github.io/JavaScript/">Live Demo</a>
 
 ### 🛠 Lessons
 
