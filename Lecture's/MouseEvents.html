@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#myBox {
+				background-color: lightgreen;
+				width: 300px;
+				height: 300px;
+				font-size: 4.5rem;
+				font-weight: bold;
+				display: flex;
+				align-items: center;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="myBox">Click me 😁</div>
+	</body>
+</html>
+
+<script>
+	// eventListener = Listen for specific events to create interactive web pages
+	//                 events: click, mouseover, mouseout
+	//
+
+	const myBox = document.getElementById("myBox")
+
+	myBox.addEventListener("click", () => {
+		event.target.style.backgroundColor = "tomato"
+		event.target.textContent = "OUCH! 🤕"
+	})
+
+	myBox.addEventListener("mouseover", () => {
+		event.target.style.backgroundColor = "yellow"
+		event.target.textContent = "Don't do it 😲"
+	})
+
+	myBox.addEventListener("mouseout", () => {
+		event.target.backGroundColor = "lightgreen"
+		event.target.textcontent = "Click Me! 😀"
+	})
+</script>
