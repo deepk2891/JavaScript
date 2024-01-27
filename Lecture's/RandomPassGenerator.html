@@ -4,48 +4,39 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 80vh;
+			}
+			button {
+				padding: 15px;
+				font-size: 1.3rem;
+				border: 1.5px solid black;
+				cursor: pointer;
+				display: block;
+			}
+		</style>
 	</head>
-	<body></body>
+	<body>
+		<button onclick="generateAndDisplayPassword()">🚀 Google password Suggetion 🚀</button>
+		<h1 id="password">Click 👆 here, Let's make a strong password</h1>
+	</body>
 </html>
 <script>
-	function generatePassword(length, includeLowerCase, includeUpperCase, includeNumbers, includeSymbols) {
-		const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"
-		const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		const numberChars = "0123456789"
-		const symbolsChars = "!@#$%^&*()_+-="
-
-		let allowedChars = ""
+	function generateAndDisplayPassword() {
+		const passwordLength = 12
+		const passwordString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-="
 		let password = ""
 
-		allowedChars += includeLowerCase ? lowercaseChars : ""
-		allowedChars += includeUpperCase ? uppercaseChars : ""
-		allowedChars += includeNumbers ? numberChars : ""
-		allowedChars += includeSymbols ? symbolsChars : ""
-
-		console.log(allowedChars)
-
-		if (length <= 0) {
-			return `(password length must be at least 1)`
-		}
-		if (allowedChars.length === 0) {
-			return `(At least one set of character need to be selected)`
+		for (let i = 0; i < passwordLength; i++) {
+			const randomIndex = Math.floor(Math.random() * passwordString.length)
+			password += passwordString[randomIndex]
 		}
 
-		for (let i = 0; i < length; i++) {
-			const randomIndex = Math.floor(Math.random() * allowedChars.length)
-			password += allowedChars[randomIndex]
-		}
-
-		return password
+		document.getElementById("password").innerText = password
 	}
-
-	const passwordLength = 12
-	const includeLowerCase = true
-	const includeUpperCase = true
-	const includeNumbers = true
-	const includeSymbols = true
-
-	const password = generatePassword(passwordLength, includeLowerCase, includeNumbers, includeSymbols, includeUpperCase)
-
-	console.log(`Generated password : ${password}`)
 </script>
