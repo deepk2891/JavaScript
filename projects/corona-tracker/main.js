@@ -44,3 +44,20 @@ function fetchData () {
         }
     });
 }
+
+function updateData (res,input) {
+    for (let i = 0; i < res.statewise.length; i++)
+    {
+        if (input.toLowerCase() === res.statewise[ i ].state.toLowerCase())
+        {
+            const stat = res.statewise[ i ];
+            state.innerHTML = "State: " + stat.state;
+            confirm.innerHTML = "Confirmed Cases: " + stat.confirmed;
+            active.innerHTML = "Active Cases: " + stat.active;
+            death.innerHTML = "Total Deaths: " + stat.deaths;
+            recover.innerHTML = "Recovered Cases: " + stat.recovered;
+
+            document.getElementById('detail').style.display = "block";
+        }
+    }
+}
