@@ -12,7 +12,11 @@ if (true) console.log("NOT in Block");
 var a = 100
 let b = 100
 const c = 100
+let d = 10
 {
+    //shadowing
+    // var d = 10  //❌
+    let d = 10
     // Hoisted in Global-Scope
     var a = 10
 
