@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			html {
+				color-scheme: dark;
+			}
+			body {
+				background-color: #f2f2f2;
+				color: #333;
+				transition: background-color 0.2s, color 0.5s;
+				font-family: Arial, sans-serif;
+			}
+			body.dark-mode {
+				background-color: #1a1a1a;
+				color: #f2f2f2;
+			}
+			button {
+				padding: 10px;
+			}
+
+			/* Default colors for titles */
+			.title1 {
+				color: #4caf50;
+				background-color: #f2f2f2;
+				padding: 10px;
+				border: 2px solid #424242;
+				border-radius: 5px;
+			}
+			.title2 {
+				color: #ffc107;
+				background-color: #424242;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.title3 {
+				color: #607d8b;
+				background-color: #ffeb3b;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.title4 {
+				color: #2196f3;
+				background-color: #4caf50;
+				padding: 10px;
+				border-radius: 5px;
+			}
+
+			/* Additional colors for titles in dark mode */
+			body.dark-mode .title1 {
+				color: #f2f2f2;
+				background-color: #1a1a1a;
+				border: 2px solid #f2f2f2;
+			}
+			body.dark-mode .title2 {
+				background-color: #ffc107;
+				color: #616161;
+			}
+			body.dark-mode .title3 {
+				background-color: #607d8b;
+				color: #ffeb3b;
+			}
+			body.dark-mode .title4 {
+				background-color: #2196f3;
+				color: #4caf50;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="title1">Hello Mr. Deep Kothari ( https://github.com/deepk2891/JavaScript/tree/main/projects/Darkmode.html )</h1>
+		<h1 class="title2">Hello Mr. Deep Kothari ( https://github.com/deepk2891/JavaScript/tree/main/projects/Darkmode.html )</h1>
+		<h1 class="title3">Hello Mr. Deep Kothari ( https://github.com/deepk2891/JavaScript/tree/main/projects/Darkmode.html )</h1>
+		<h1 class="title4">Hello Mr. Deep Kothari ( https://github.com/deepk2891/JavaScript/tree/main/projects/Darkmode.html )</h1>
+
+		<button onclick="toggle()">Toggle Dark Mode</button>
+
+		<script>
+			function toggle() {
+				const body = document.querySelector("body")
+				body.classList.toggle("dark-mode")
+			}
+		</script>
+	</body>
+</html>
