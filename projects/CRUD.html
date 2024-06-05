@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>CRUD JS</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" /> -->
 		<script src="https://cdn.tailwindcss.com"></script>
 		<style>
 			@media screen and (max-width: 630px) {
@@ -15,193 +14,159 @@
 			}
 		</style>
 	</head>
-	<body>
-		<div class="container mx-auto">
-			<h1 class="text-2xl md:text-3xl lg:text-4xl text-center font-medium text-black py-8 bg-blue-200">CRUD Application in <span class="text-indigo-600">JavaScript</span></h1>
-			<a href="" class="absolute top-0 right-0">View code</a>
-
-			<div class="flex flex-col xl:flex-row py-5 text-lg">
-				<div class="text-center xl:w-2/5 p-4">
-					<div>
-						<h2 class="text-indigo-600 font-medium text-2xl pb-5">User Detail</h2>
-						<input
-							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
-							type="text"
-							placeholder="Enter your name"
-							required
-							id="userName"
-						/>
-						<input
-							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
-							type="email"
-							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-							placeholder="Enter your email"
-							required
-							id="userEmail"
-						/>
-						<input
-							class="block w-full mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
-							type="password"
-							placeholder="Enter your password"
-							required
-							id="userPassword"
-						/>
-						<div class="flex items-center flex-wrap mb-4">
-							<label for="gender" class="mr-4">Gender : </label>
-							<label for="male"> <input type="radio" id="male" name="gender" value="Male" class="mr-1" /> Male</label>
-							<label for="female"> <input type="radio" id="female" name="gender" value="Female" class="ml-4 mr-1" /> Female</label>
-						</div>
-						<div class="mb-4">
-							<div class="flex items-center flex-wrap">
-								<label for="hobbies" class="mr-4">Hobbies : </label>
-								<label for="driving" class="mr-4"> <input type="checkbox" id="driving" name="hobbies" value="Driving" class="mr-1" /> Driving</label>
-								<label for="cycling" class="mr-4"> <input type="checkbox" id="cycling" name="hobbies" value="Cycling" class="mr-1" /> Cycling</label>
-								<label for="coding"> <input type="checkbox" id="coding" name="hobbies" value="Coding" class="mr-1" /> Coding</label>
-							</div>
-						</div>
-						<div class="mb-4">
-							<select name="course" id="course" class="block w-full p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none">
-								<option value="" disabled selected>Select a course</option>
-								<option value="full-stack">Full Stack</option>
-								<option value="android">Android</option>
-								<option value="animation">Animation</option>
-								<option value="figma">Figma</option>
-							</select>
-						</div>
-						<p id="InputIsEmptyMessage" class="text-left text-red-600 text-xl"></p>
-						<button type="submit" class="block w-full border border-indigo-500 text-lg py-2 px-6 bg-indigo-600 text-white hover:bg-white hover:text-indigo-400" onclick="addUser()">
-							Add user
-						</button>
-					</div>
-				</div>
-
-				<div class="xl:w-3/5 p-4">
-					<div class="text-center">
-						<h2 class="text-indigo-600 font-medium text-2xl pb-5">User Table</h2>
-						<div class="table-container overflow-x-auto">
-							<table class="table-auto border border-gray-500 mx-auto w-full">
-								<thead>
-									<tr>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">UserName</th>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">Email</th>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">Password</th>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">Gender</th>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">Hobbies</th>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">course</th>
-										<th class="sm:w-1/6 md:w-1/6 lg:w-1/6 xl:w-1/6 border border-gray-500 px-2 py-2">Actions</th>
-									</tr>
-								</thead>
-								<tbody class="js-user-list">
-									<!-- <tr>
-									<td class="border border-gray-500 px-4 py-2"></td>
-									<td class="border border-gray-500 px-4 py-2"></td>
-									<td class="border border-gray-500 px-4 py-2"></td>
-									<td class="border border-gray-500 px-4 py-2">
-										<button class="border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400">
-											<i class="fa-solid fa-pen-to-square"></i>
-										</button>
-										<button class="border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400">
-											<i class="fa-solid fa-trash"></i>
-										</button>
-									</td>
-								</tr> -->
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
+	<body class="container mx-auto p-4">
+		<h1 class="text-2xl text-center mb-4">CRUD APPLICATION</h1>
+		<div class="flex ustify-evenly flex-col justify-center lg:flex-row lg:justify-evenly mt-10">
+			<form id="userForm" onsubmit="return addOrUpdateUser(event)" class="mb-4 w-full lg:w-5/12 flex flex-col gap-1.5">
+				<input type="text" id="name" placeholder="Name" class="block w-full p-2 border border-gray-500" />
+				<p id="error-name" class="text-red-600"></p>
+				<textarea id="address" placeholder="Address" class="block w-full p-2 border border-gray-500"></textarea>
+				<p id="error-address" class="text-red-600"></p>
+				<select id="country" class="block w-full p-2 border border-gray-500">
+					<option value="" disabled selected>Select Country</option>
+					<option value="India">India</option>
+					<option value="Russia">Russia</option>
+					<option value="Canada">Canada</option>
+					<option value="America">America</option>
+				</select>
+				<p id="error-country" class="text-red-600"></p>
+				<input type="number" id="age" placeholder="Age" class="block w-full p-2 border border-gray-500" />
+				<p id="error-age" class="text-red-600"></p>
+				<input type="number" id="phone" placeholder="Phone" class="block w-full p-2 border border-gray-500" />
+				<p id="error-phone" class="text-red-600"></p>
+				<p id="error-message" class="text-red-600 animate-bounce text-center text-xl"></p>
+				<button type="submit" id="submit-btn" class="block w-full bg-blue-500 text-white p-2">Add Data</button>
+			</form>
+			<div class="border-r-2 border-gray-300"></div>
+			<div class="table-container w-full lg:w-6/12">
+				<table class="table-auto border border-gray-500 w-full">
+					<thead>
+						<tr>
+							<th class="border border-gray-500 px-2 py-2">Id</th>
+							<th class="border border-gray-500 px-2 py-2">Name</th>
+							<th class="border border-gray-500 px-2 py-2">Address</th>
+							<th class="border border-gray-500 px-2 py-2">Country</th>
+							<th class="border border-gray-500 px-2 py-2">Age</th>
+							<th class="border border-gray-500 px-2 py-2">Phone</th>
+							<th class="border border-gray-500 px-2 py-2">Actions</th>
+						</tr>
+					</thead>
+					<tbody id="userTableBody"></tbody>
+				</table>
 			</div>
 		</div>
-
-		<script>
-			const addUser = () => {
-				const userNameInput = document.getElementById("userName")
-				const userEmailInput = document.getElementById("userEmail")
-				const userPasswordInput = document.getElementById("userPassword")
-
-				const userName = userNameInput.value
-				const userEmail = userEmailInput.value
-				const userPassword = userPasswordInput.value
-
-				const genderInput = document.querySelector('input[name="gender"]:checked')
-				const gender = genderInput ? genderInput.value : ""
-				const hobbiesInputs = document.querySelectorAll('input[name="hobbies"]:checked')
-				const hobbies = Array.from(hobbiesInputs)
-					.map((hobby) => hobby.value)
-					.join(", ")
-				const course = document.getElementById("course").value
-
-				const newRowHTML = `
-					<tr>
-						<td class="border border-gray-500 px-2 py-2">${userName}</td>
-						<td class="border border-gray-500 px-2 py-2">${userEmail}</td>
-						<td class="border border-gray-500 px-2 py-2">${userPassword}</td>
-						<td class="border border-gray-500 px-2 py-2">${gender}</td>
-						<td class="border border-gray-500 px-2 py-2">${hobbies}</td>
-						<td class="border border-gray-500 px-2 py-2">${course}</td>
-						<td class="border border-gray-500 px-2 py-2">
-							<button class="border border-blue-500 text-lg py-2 px-6 bg-blue-600 text-white hover:bg-white hover:text-blue-400" onclick="editUser(this)">
-								<i class="fa-solid fa-pen-to-square"></i>
-							</button>
-							<button class="border border-red-500 text-lg py-2 px-6 bg-red-600 text-white hover:bg-white hover:text-red-400" onclick="deleteUser(this)">
-								<i class="fa-solid fa-trash"></i>
-							</button>
-						</td>
-					</tr>
-				`
-
-				const InputIsEmptyMessage = document.getElementById("InputIsEmptyMessage")
-				if (userName === "" || userEmail === "" || userPassword === "" || gender === "" || hobbies === "" || course === "") {
-					InputIsEmptyMessage.innerHTML = `Please enter all user information`
-				} else {
-					InputIsEmptyMessage.innerHTML = ``
-
-					document.querySelector(".js-user-list").insertAdjacentHTML("beforeend", newRowHTML)
-
-					userNameInput.value = ""
-					userEmailInput.value = ""
-					userPasswordInput.value = ""
-					genderInput.checked = false
-					hobbiesInputs.forEach((hobby) => (hobby.checked = false))
-					document.getElementById("course").value = ""
-				}
-			}
-
-			const editUser = (button) => {
-				const rowToEdit = button.closest("tr")
-				const cells = rowToEdit.getElementsByTagName("td")
-
-				const existingUserName = cells[0].innerHTML
-				const existingUserEmail = cells[1].innerHTML
-				const existingUserPassword = cells[2].innerHTML
-				const existingUserGender = cells[3].innerHTML
-				const existingUserHobbies = cells[4].innerHTML
-				const existingUserCourse = cells[5].innerHTML
-
-				document.getElementById("userName").value = existingUserName
-				document.getElementById("userEmail").value = existingUserEmail
-				document.getElementById("userPassword").value = existingUserPassword
-
-				const genderInputs = document.getElementsByName("gender")
-				genderInputs.forEach((input) => {
-					input.checked = input.value === existingUserGender
-				})
-
-				const hobbiesInputs = document.getElementsByName("hobbies")
-				const existingHobbies = existingUserHobbies.split(", ")
-				hobbiesInputs.forEach((input) => {
-					input.checked = existingHobbies.includes(input.value)
-				})
-
-				document.getElementById("course").value = existingUserCourse
-
-				rowToEdit.remove()
-			}
-
-			const deleteUser = (button) => {
-				const rowDelete = button.closest("tr")
-				rowDelete.remove()
-			}
-		</script>
 	</body>
 </html>
+<script>
+	let userData = [
+		{
+			name: "deep",
+			address: "31 Shivnagar,SudamaChowk, Surat",
+			country: "India",
+			age: "21",
+			phone: "258741258963",
+		},
+	]
+
+	const renderTable = () => {
+		const tableBody = document.getElementById("userTableBody")
+		tableBody.innerHTML = ""
+
+		userData.forEach((user, index) => {
+			const row = document.createElement("tr")
+			row.innerHTML = `
+				       <td class="border border-gray-500 px-2 py-2">${index + 1}</td>
+				       <td class="border border-gray-500 px-2 py-2">${user.name}</td>
+				       <td class="border border-gray-500 px-2 py-2">${user.address}</td>
+				       <td class="border border-gray-500 px-2 py-2">${user.country}</td>
+				       <td class="border border-gray-500 px-2 py-2">${user.age}</td>
+				       <td class="border border-gray-500 px-2 py-2">${user.phone}</td>
+				       <td class="border border-gray-500 px-2 py-2">
+								<button class="bg-blue-500 text-white p-1" onclick="editUser(${index})">Edit</button>
+								<button class="bg-red-500 text-white p-1" onclick="deleteUser(${index})">Delete</button>
+							</td>
+				     `
+			tableBody.appendChild(row)
+		})
+	}
+
+	const addOrUpdateUser = (event) => {
+		event.preventDefault()
+
+		const name = document.getElementById("name").value.trim()
+		const address = document.getElementById("address").value.trim()
+		const country = document.getElementById("country").value
+		const age = document.getElementById("age").value
+		const phone = document.getElementById("phone").value
+
+		const errorMessage = document.getElementById("error-message")
+		const errorName = document.getElementById("error-name")
+		const errorAddress = document.getElementById("error-address")
+		const errorCountry = document.getElementById("error-country")
+		const errorAge = document.getElementById("error-age")
+		const errorPhone = document.getElementById("error-phone")
+
+		errorMessage.textContent = ""
+		errorName.textContent = ""
+		errorAddress.textContent = ""
+		errorCountry.textContent = ""
+		errorAge.textContent = ""
+		errorPhone.textContent = ""
+
+		let isValid = true
+		if (!name) {
+			errorName.textContent = "*name is required"
+			isValid = false
+		}
+		if (!address) {
+			errorAddress.textContent = "*address is required"
+			isValid = false
+		}
+		if (!country) {
+			errorCountry.textContent = "*country is required"
+			isValid = false
+		}
+		if (!age) {
+			errorAge.textContent = "*age is required"
+			isValid = false
+		}
+		if (!phone) {
+			errorPhone.textContent = "*phone is required"
+			isValid = false
+		}
+		if (!isValid) {
+			errorMessage.textContent = "Please enter all the *required details"
+			return
+		}
+
+		const newUser = { name, address, country, age, phone }
+		if (editIndex === -1) {
+			userData.push(newUser)
+		} else {
+			userData[editIndex] = newUser
+			editIndex = -1
+			document.getElementById("submit-btn").textContent = "Add Data"
+		}
+
+		document.getElementById("userForm").reset()
+		renderTable()
+	}
+
+	let editIndex = -1
+	const editUser = (index) => {
+		const user = userData[index]
+		document.getElementById("name").value = user.name
+		document.getElementById("address").value = user.address
+		document.getElementById("country").value = user.country
+		document.getElementById("age").value = user.age
+		document.getElementById("phone").value = user.phone
+		editIndex = index
+	}
+
+	const deleteUser = (index) => {
+		userData.splice(index, 1)
+		renderTable()
+	}
+
+	document.addEventListener("DOMContentLoaded", renderTable)
+</script>
